@@ -52,7 +52,7 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     environment:
-      - LOC=swis,us_new_york_city,us_ohio-pf,us_virginia-pf
+      - LOC=swiss,us_california,ca_ontario
       - USER=${PIA_USER}
       - PASS=${PIA_PASS}
       - LOCAL_NETWORK=192.168.0.0/24
