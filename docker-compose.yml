@@ -1,0 +1,341 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_REMOVE_VOLUMES=true
+      - WATCHTOWER_NOTIFICATIONS_HOSTNAME=arr-stack
+      - WATCHTOWER_NOTIFICATIONS=shoutrrr
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2m"
+        max-file: "3"
+    restart: unless-stopped
+
+  autoheal:
+    image: willfarrell/autoheal:1.2.0
+    container_name: autoheal
+    networks:
+      - arr-stack
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+      - AUTOHEAL_INTERVAL=5
+      - AUTOHEAL_START_PERIOD=30
+      - AUTOHEAL_DEFAULT_STOP_TIMEOUT=10
+    restart: always
+
+  vpn:
+    image: thrnz/docker-wireguard-pia
+    container_name: vpn
+    networks:
+      - arr-stack
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /vpn/forwarded_port:/pia-shared/port.dat
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - LOC=swis,us_new_york_city,us_ohio-pf,us_virginia-pf
+      - USER=${PIA_USER}
+      - PASS=${PIA_PASS}
+      - LOCAL_NETWORK=192.168.0.0/24
+      - PORT_FORWARDING=1
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.default.disable_ipv6=1
+      - net.ipv6.conf.all.disable_ipv6=1
+      - net.ipv6.conf.lo.disable_ipv6=1
+    ports:
+      - 80:80 # speedtest-vpn
+      - 8081:8081 # qbittorrent
+      - 9117:9117 # Prowlarr
+      - 9696:9696 # prowlarr
+      - 8191:8191 # flaresolverr
+      - 7878:7878 # Radarr
+      - 8787:8787 # Readarr
+      - 8989:8989 # Sonarr
+      - 6767:6767 # Bazarr
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  speedtest-vpn:
+    container_name: speedtest-vpn
+    image: henrywhitaker3/speedtest-tracker
+    network_mode: service:vpn
+    volumes:
+      - /config/speedtest-vpn:/config
+    env_file:
+      - .env
+    environment:
+      - OOKLA_EULA_GDPR=true
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    depends_on:
+      vpn:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  speedtest:
+    container_name: speedtest
+    image: henrywhitaker3/speedtest-tracker
+    networks:
+      - arr-stack
+    ports:
+      - 81:80
+    volumes:
+      - /config/speedtest:/config
+    env_file:
+      - .env
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    healthcheck:
+      test: "curl -I www.example.org 2>/dev/null | head -n 1 | cut -d$' ' -f2"
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  prowlarr:
+    image: linuxserver/prowlarr:latest
+    container_name: prowlarr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/prowlarr:/config
+      - /data/media:/mnt/media
+      - /data/media/Downloads:/mnt/downloads
+    depends_on:
+      vpn:
+        condition: service_started
+      flaresolverr:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  flaresolverr:
+    image: flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    env_file:
+      - .env
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_HTML=${LOG_HTML:-false}
+      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+    depends_on:
+      vpn:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  qbittorrent:
+    image: linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/qbittorrent:/config
+      - /data/media/Downloads:/mnt/downloads
+    env_file:
+      - .env
+    environment:
+      - WEBUI_PORT=8081
+    depends_on:
+      vpn:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  radarr:
+    image: linuxserver/radarr:latest
+    container_name: radarr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/radarr:/config
+      - /data/media:/mnt/media
+      - /data/media/Downloads:/mnt/downloads
+    depends_on:
+      vpn:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  readarr:
+    image: linuxserver/readarr:develop
+    container_name: readarr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/readarr:/config
+      - /data/books:/mnt/books
+      - /data/media/Downloads:/mnt/downloads
+    depends_on:
+      vpn:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/sonarr:/config
+      - /data/media:/mnt/media
+      - /data/media/Downloads:/mnt/downloads
+    depends_on:
+      vpn:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: bazarr
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/bazarr:/config
+      - /data/media:/mnt/media
+    depends_on:
+      vpn:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+
+  kavita:
+    image: jvmilazz0/kavita:latest
+    container_name: kavita
+    networks:
+      - arr-stack
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/books:/mnt/books
+      - /data/configs/kavita:/kavita/config
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    restart: always
+
+networks:
+  arr-stack:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
