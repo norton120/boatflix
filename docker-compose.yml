@@ -55,8 +55,9 @@ services:
       - LOC=swiss,us_california,ca_ontario
       - USER=${PIA_USER}
       - PASS=${PIA_PASS}
-      - LOCAL_NETWORK=192.168.50.1/24
+      - LOCAL_NETWORK=192.168.50.0/24
       - PORT_FORWARDING=1
+      - FIREWALL=0
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
       - net.ipv6.conf.default.disable_ipv6=1
