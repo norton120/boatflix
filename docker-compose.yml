@@ -91,9 +91,9 @@ services:
     environment:
       - JELLYFIN_PublishedServerUrl=http://192.168.50.1 #optional
     volumes:
-      - /path/to/jellyfin/library:/config
-      - /path/to/tvseries:/data/tvshows
-      - /path/to/movies:/data/movies
+      - /data/configs/jellyfin/config:/config
+      - /data/media/Shows:/data/Shows
+      - /data/media/Movies:/data/Movies
     ports:
       - 80:8096
       - 8920:8920 #optional
