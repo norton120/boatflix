@@ -255,7 +255,7 @@ services:
     restart: always
 
   readarr:
-    image: linuxserver/readarr:develop
+    image: linuxserver/readarr:latest
     container_name: readarr
     network_mode: service:vpn
     logging:
@@ -266,6 +266,30 @@ services:
       - /data/configs/readarr:/config
       - /data/media/Books:/mnt/books
       - /data/media/Downloads:/mnt/downloads
+    depends_on:
+      vpn:
+        condition: service_started
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s
+    restart: always
+  calibri:
+    image: linuxserver/calibre:latest
+    container_name: calibri
+    network_mode: service:vpn
+    logging:
+      options:
+        max-size: "5M"
+        max-file: "3"
+    volumes:
+      - /data/configs/calibri:/config
+      - /data/media/Books:/mnt/books
     depends_on:
       vpn:
         condition: service_started
@@ -329,24 +353,6 @@ services:
       retries: 3
       start_period: 30s
       start_interval: 5s
-    restart: always
-
-  kavita:
-    image: jvmilazz0/kavita:latest
-    container_name: kavita
-    networks:
-      - arr-stack
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
-    volumes:
-      - /data/books:/mnt/books
-      - /data/configs/kavita:/kavita/config
-    ports:
-      - "5000:5000"
-    env_file:
-      - .env
     restart: always
 
 networks:
