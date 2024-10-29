@@ -79,6 +79,7 @@ services:
       - 8787:8787 # Readarr
       - 8989:8989 # Sonarr
       - 8686:8686 # Lidarr
+      - 8080:8080 # Calibri
       - 6767:6767 # Bazarr
     healthcheck:
       test: ["CMD", "curl", "-fsL", "ipconfig.me"]
