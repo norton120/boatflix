@@ -105,7 +105,7 @@ services:
     environment:
       - LOG_LEVEL=${LOG_LEVEL:-info}
     volumes:
-      - /data/configs/jellyseerr/config:/config
+      - /data/configs/jellyseerr/config:/app/config
     restart: unless-stopped
 
   jellyfin:
