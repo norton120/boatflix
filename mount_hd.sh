@@ -1,2 +1,2 @@
 #!/bin/bash
-mount /dev/sda1 /mnt
+sudo mount /dev/sda1 /mnt && systemctl daemon-reload
