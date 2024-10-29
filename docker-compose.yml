@@ -116,6 +116,8 @@ services:
       - /data/configs/jellyfin/config:/config
       - /data/media/Shows:/data/Shows
       - /data/media/Movies:/data/Movies
+      - /data/media/Music:/data/Music
+      - /data/media/Books:/data/Books
     restart: unless-stopped
 
   prowlarr:
@@ -260,7 +262,7 @@ services:
         max-file: "3"
     volumes:
       - /data/configs/readarr:/config
-      - /data/books:/mnt/books
+      - /data/media/Books:/mnt/books
       - /data/media/Downloads:/mnt/downloads
     depends_on:
       vpn:
