@@ -5,10 +5,11 @@ Requires=docker.service
 
 [Service]
 WorkingDirectory=/home/boatflix/boatflix/stackarr
-ExecStartPre=/usr/bin/git pull >> git.log || true
-ExecStartPre=/bin/bash /home/boatflix/boatflix/stackarr/mount_hd.sh >> mount.log
-ExecStart=/usr/local/bin/docker-compose up -d >> up.log
+ExecStartPre=/usr/bin/git pull || true
+ExecStartPre=/bin/bash /home/boatflix/boatflix/stackarr/mount_hd.sh
+ExecStart=/usr/local/bin/docker-compose up -d
 ExecStop=/usr/local/bin/docker-compose down
+RestartSec=5
 Restart=always
 
 [Install]
