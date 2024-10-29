@@ -238,7 +238,7 @@ services:
         max-file: "3"
     volumes:
       - /data/configs/radarr:/config
-      - /data/media/Music:/music
+      - /data/media/Movies:/movies
       - /data/media/Downloads:/mnt/downloads
     depends_on:
       vpn:
@@ -290,7 +290,7 @@ services:
         max-file: "3"
     volumes:
       - /data/configs/sonarr:/config
-      - /data/media:/mnt/media
+      - /data/media/Shows:/mnt/media/shows
       - /data/media/Downloads:/mnt/downloads
     depends_on:
       vpn:
