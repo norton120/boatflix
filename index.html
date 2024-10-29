@@ -16,13 +16,15 @@
                 padding: 10px;
                 text-align: center;
             }
-            h3 {
+            .bf-button {
+                margin-left: 1rem;
                 display: inline-block;
                 padding: 1rem;
                 border: thin solid #ccc;
                 border-radius: .25rem;
             }
-            h3 a {
+            .bf-button h3 a {
+                text-decoration: none;
                 color:darkred;
                 font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                 text-shadow: #000;
@@ -48,7 +50,10 @@
     </head>
 <body>
 <h2>Boatflix</h2>
-<h3><a href="http://boatflix.local:8096">&#127871;Boatflix&#127871;</a><sub>(Jellyfin)</sub></h3>
+<div class="bf-button">
+<h3><a href="http://boatflix.local:8096">&#127871;Boatflix&#127871;</a></h3>
+<sub>(Jellyfin)</sub>
+</div>
 <h4>Other Boatflix Services:</h4>
 <ul>
     <li><a href="http://boatflix.local:5055">&#128499;Request New Movies & Shows (Jellyseerr)</a></li>
