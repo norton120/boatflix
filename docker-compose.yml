@@ -89,6 +89,7 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
+    network_mode: service:vpn
     env_file:
       - .env
     volumes:
