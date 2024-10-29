@@ -256,7 +256,7 @@ services:
     restart: always
 
   readarr:
-    image: linuxserver/readarr:latest
+    image: linuxserver/readarr:development
     container_name: readarr
     network_mode: service:vpn
     logging:
