@@ -7,8 +7,8 @@ Requires=docker.service
 WorkingDirectory=/home/boatflix/boatflix/stackarr
 USER=1000
 ExecStartPre=+/bin/bash /home/boatflix/boatflix/stackarr/mount_hd.sh
-ExecStart=/usr/local/bin/docker-compose up -d
-ExecStop=/usr/local/bin/docker-compose down
+ExecStart=/usr/local/bin/docker compose up -d
+ExecStop=/usr/local/bin/docker compose down
 RestartSec=5
 Restart=always
 
