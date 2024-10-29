@@ -65,7 +65,7 @@ services:
       - net.ipv6.conf.all.disable_ipv6=1
       - net.ipv6.conf.lo.disable_ipv6=1
     ports:
-      - 80:8096 # jellyfin
+      - 8096:8096 # jellyfin
       - 8920:8920 # jellyfin
       - 7359:7359/udp # jellyfin
       - 1900:1900/udp # jellyfin
