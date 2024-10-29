@@ -103,10 +103,10 @@ services:
     env_file:
       - .env
     environment:
-      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_LEVEL=debug
     volumes:
       - /data/configs/jellyseerr/config:/app/config
-    restart: unless-stopped
+    restart: always
 
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
