@@ -18,12 +18,12 @@ services:
         max-size: "2m"
         max-file: "3"
     restart: unless-stopped
+    networks:
+      - boatflix
 
   autoheal:
     image: willfarrell/autoheal:1.2.0
     container_name: autoheal
-    networks:
-      - arr-stack
     logging:
       options:
         max-size: "5M"
@@ -36,71 +36,17 @@ services:
       - AUTOHEAL_START_PERIOD=30
       - AUTOHEAL_DEFAULT_STOP_TIMEOUT=10
     restart: always
-
-  vpn:
-    image: thrnz/docker-wireguard-pia
-    container_name: vpn
-    networks:
-      - arr-stack
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
-    volumes:
-      - /vpn/forwarded_port:/pia-shared/port.dat
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    environment:
-      - LOC=us_new_york_city,swiss,us_california,ca_ontario
-      - USER=${PIA_USER}
-      - PASS=${PIA_PASS}
-      - LOCAL_NETWORK=192.168.50.0/24
-      - PORT_FORWARDING=1
-      - FIREWALL=0
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
-      - net.ipv6.conf.default.disable_ipv6=1
-      - net.ipv6.conf.all.disable_ipv6=1
-      - net.ipv6.conf.lo.disable_ipv6=1
-    ports:
-      - 80:80 # index
-      - 5055:5055 # jellyseerr
-      - 8096:8096 # jellyfin
-      - 8920:8920 # jellyfin
-      - 7359:7359/udp # jellyfin
-      - 1900:1900/udp # jellyfin
-      - 8081:8081 # qbittorrent
-      - 9117:9117 # Prowlarr
-      - 9696:9696 # prowlarr
-      - 8191:8191 # flaresolverr
-      - 7878:7878 # Radarr
-      - 8787:8787 # Readarr
-      - 8989:8989 # Sonarr
-      - 8686:8686 # Lidarr
-      - 8080:8080 # Calibri
-      - 6767:6767 # Bazarr
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-
   index:
     image: httpd:latest
     container_name: index
-    network_mode: service:vpn
     volumes:
       - ./index.html:/usr/local/apache2/htdocs/index.html
+    networks:
+      - boatflix
 
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
-    network_mode: service:vpn
     env_file:
       - .env
     environment:
@@ -108,11 +54,12 @@ services:
     volumes:
       - /data/configs/jellyseerr/config:/app/config
     restart: always
+    networks:
+      - boatflix
 
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
-    network_mode: service:vpn
     env_file:
       - .env
     volumes:
@@ -122,11 +69,12 @@ services:
       - /data/media/Music:/data/Music
       - /data/media/Books:/data/Books
     restart: unless-stopped
+    networks:
+      - boatflix
 
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -136,8 +84,6 @@ services:
       - /data/media:/mnt/media
       - /data/media/Downloads:/mnt/downloads
     depends_on:
-      vpn:
-        condition: service_started
       flaresolverr:
         condition: service_started
     env_file:
@@ -150,11 +96,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   flaresolverr:
     image: flaresolverr/flaresolverr:latest
     container_name: flaresolverr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -165,9 +112,6 @@ services:
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - LOG_HTML=${LOG_HTML:-false}
       - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
-    depends_on:
-      vpn:
-        condition: service_started
     healthcheck:
       test: ["CMD", "curl", "-fsL", "ipconfig.me"]
       interval: 60s
@@ -176,11 +120,13 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
-    network_mode: service:vpn
+    network_mode: "service:vpn"
     logging:
       options:
         max-size: "5M"
@@ -203,10 +149,10 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+
   lidarr:
     image: linuxserver/lidarr
     container_name: lidarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -215,9 +161,6 @@ services:
       - /data/configs/lidarr:/config
       - /data/media:/mnt/media
       - /data/media/Downloads:/mnt/downloads
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -228,11 +171,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   radarr:
     image: linuxserver/radarr:latest
     container_name: radarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -241,9 +185,6 @@ services:
       - /data/configs/radarr:/config
       - /data/media/Movies:/movies
       - /data/media/Downloads:/mnt/downloads
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -254,11 +195,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   readarr:
     image: linuxserver/readarr:develop
     container_name: readarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -267,9 +209,6 @@ services:
       - /data/configs/readarr:/config
       - /data/media/Books:/mnt/books
       - /data/media/Downloads:/mnt/downloads
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -280,10 +219,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
+
   calibri:
     image: linuxserver/calibre:latest
     container_name: calibri
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -291,9 +232,6 @@ services:
     volumes:
       - /data/configs/calibri:/config
       - /data/media/Books:/mnt/books
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -304,11 +242,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   sonarr:
     image: linuxserver/sonarr:latest
     container_name: sonarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -317,9 +256,6 @@ services:
       - /data/configs/sonarr:/config
       - /data/media/Shows:/mnt/media/shows
       - /data/media/Downloads:/mnt/downloads
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -330,11 +266,12 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    networks:
+      - boatflix
 
   bazarr:
     image: linuxserver/bazarr:latest
     container_name: bazarr
-    network_mode: service:vpn
     logging:
       options:
         max-size: "5M"
@@ -342,9 +279,6 @@ services:
     volumes:
       - /data/configs/bazarr:/config
       - /data/media:/mnt/media
-    depends_on:
-      vpn:
-        condition: service_started
     env_file:
       - .env
     healthcheck:
@@ -355,10 +289,47 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
-
+    networks:
+      - boatflix
+  vpn:
+    image: qmcgaw/gluetun
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /data/configs/gluetun:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=private internet access
+      - OPENVPN_USER=${PIA_USER}
+      - OPENVPN_PASSWORD=${PIA_PASS}
+      - SERVER_REGIONS=Netherlands
+    ports:
+      - 8080:8080 # qBittorrent Web UI port
+      - 6881:6881 # qbittorrent
+      - 6881:6881/udp # qbittorrent
+    networks:
+      - boatflix
+    restart: unless-stopped
+  raspap:
+      container_name: raspap
+      image: ghcr.io/raspap/raspap-docker:latest
+      ports:
+        - "8099:8081"
+      privileged: true
+      network_mode: host
+      cgroup: host # uncomment when using an ARM device
+      environment:
+        - RASPAP_SSID=boatflix
+        - RASPAP_SSID_PASS=boatflix
+        - RASPAP_COUNTRY=GB
+        - RASPAP_WEBGUI_USER=${AP_USER}
+        - RASPAP_WEBGUI_PASS=${AP_PASS}
+        - RASPAP_WEBGUI_PORT=99
+      cap_add:
+        - SYS_ADMIN
+      volumes:
+        - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      restart: unless-stopped
 networks:
-  arr-stack:
+  boatflix:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
