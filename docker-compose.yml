@@ -148,8 +148,6 @@ services:
     depends_on:
       vpn:
         condition: service_started
-    ports:
-      - 8081:8081
     healthcheck:
       test: ["CMD", "curl", "-fsL", "ipconfig.me"]
       interval: 60s
@@ -334,8 +332,6 @@ services:
   raspap:
       container_name: raspap
       image: ghcr.io/raspap/raspap-docker:latest
-      ports:
-        - "8099:8081"
       privileged: true
       network_mode: host
       cgroup: host # uncomment when using an ARM device
