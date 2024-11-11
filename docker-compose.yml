@@ -324,7 +324,7 @@ services:
       - OPENVPN_PASSWORD=${PIA_PASS}
       - SERVER_REGIONS=Netherlands
     ports:
-      - 8080:8080 # qBittorrent Web UI port
+      - 8081:8081 # qBittorrent Web UI port
       - 6881:6881 # qbittorrent
       - 6881:6881/udp # qbittorrent
     networks:
