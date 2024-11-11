@@ -255,8 +255,6 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
-    ports:
-      - "8080:80"
     networks:
       - boatflix
 
