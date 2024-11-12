@@ -77,6 +77,7 @@ services:
     ports:
       - 8096:8096
       - 8920:8920
+      - 1900:1900
     networks:
       - boatflix
 
