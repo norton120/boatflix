@@ -15,8 +15,8 @@ services:
     logging:
       driver: "json-file"
       options:
-        max-size: "2m"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     restart: unless-stopped
     networks:
       - boatflix
@@ -25,9 +25,10 @@ services:
     image: willfarrell/autoheal:1.2.0
     container_name: autoheal
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
@@ -46,6 +47,11 @@ services:
       - boatflix
     ports:
       - 80:80
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   jellyseerr:
     image: fallenbagel/jellyseerr:latest
@@ -61,6 +67,11 @@ services:
       - 5055:5055
     networks:
       - boatflix
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
@@ -80,14 +91,15 @@ services:
       - 1900:1900
     networks:
       - boatflix
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   prowlarr:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
     volumes:
       - /data/configs/prowlarr:/config
       - /data/media:/mnt/media
@@ -109,14 +121,15 @@ services:
     restart: always
     networks:
       - boatflix
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   flaresolverr:
     image: flaresolverr/flaresolverr:latest
     container_name: flaresolverr
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
     env_file:
       - .env
     environment:
@@ -133,15 +146,16 @@ services:
     restart: always
     networks:
       - boatflix
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
     network_mode: "service:vpn"
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
     volumes:
       - /data/configs/qbittorrent:/config
       - /data/media/Downloads:/mnt/downloads
@@ -160,14 +174,15 @@ services:
       start_period: 30s
       start_interval: 5s
     restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   lidarr:
     image: linuxserver/lidarr
     container_name: lidarr
-    logging:
-      options:
-        max-size: "5M"
-        max-file: "3"
     volumes:
       - /data/configs/lidarr:/config
       - /data/media:/mnt/media
@@ -186,14 +201,20 @@ services:
       - 8686:8686
     networks:
       - boatflix
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
 
   radarr:
     image: linuxserver/radarr:latest
     container_name: radarr
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /data/configs/radarr:/config
       - /data/media/Movies:/movies
@@ -217,9 +238,10 @@ services:
     image: linuxserver/readarr:develop
     container_name: readarr
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /data/configs/readarr:/config
       - /data/media/Books:/mnt/books
@@ -243,14 +265,19 @@ services:
     image: linuxserver/calibre:latest
     container_name: calibri
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /data/configs/calibri:/config
       - /data/media/Books:/mnt/books
     env_file:
       - .env
+    environment:
+      - CUSTOM_PORT=8811
+    ports:
+      - 8811:8811
     healthcheck:
       test: ["CMD", "curl", "-fsL", "ipconfig.me"]
       interval: 60s
@@ -266,9 +293,10 @@ services:
     image: linuxserver/sonarr:latest
     container_name: sonarr
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /data/configs/sonarr:/config
       - /data/media/Shows:/mnt/media/shows
@@ -292,9 +320,10 @@ services:
     image: linuxserver/bazarr:latest
     container_name: bazarr
     logging:
+      driver: "json-file"
       options:
-        max-size: "5M"
-        max-file: "3"
+        max-size: "200k"
+        max-file: "2"
     volumes:
       - /data/configs/bazarr:/config
       - /data/media:/mnt/media
@@ -331,24 +360,35 @@ services:
     networks:
       - boatflix
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
   raspap:
-      container_name: raspap
-      image: ghcr.io/raspap/raspap-docker:latest
-      privileged: true
-      network_mode: host
-      cgroup: host # uncomment when using an ARM device
-      environment:
-        - RASPAP_SSID=boatflix
-        - RASPAP_SSID_PASS=boatflix
-        - RASPAP_COUNTRY=GB
-        - RASPAP_WEBGUI_USER=${AP_USER}
-        - RASPAP_WEBGUI_PASS=${AP_PASS}
-        - RASPAP_WEBGUI_PORT=99
-      cap_add:
-        - SYS_ADMIN
-      volumes:
-        - /sys/fs/cgroup:/sys/fs/cgroup:rw
-      restart: unless-stopped
+    container_name: raspap
+    image: ghcr.io/raspap/raspap-docker:latest
+    privileged: true
+    network_mode: host
+    cgroup: host # uncomment when using an ARM device
+    environment:
+      - RASPAP_SSID=boatflix
+      - RASPAP_SSID_PASS=boatflix
+      - RASPAP_COUNTRY=GB
+      - RASPAP_WEBGUI_USER=${AP_USER}
+      - RASPAP_WEBGUI_PASS=${AP_PASS}
+      - RASPAP_WEBGUI_PORT=99
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "2"
+
 networks:
   boatflix:
     driver: bridge
