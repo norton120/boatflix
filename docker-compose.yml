@@ -1,44 +1,22 @@
 services:
-
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
+  webapp:
+    profiles:
+      - setup
+      - running
+    image: boatflix_webapp
+    container_name: webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    env_file:
-      - .env
-    environment:
-      - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_REMOVE_VOLUMES=true
-      - WATCHTOWER_NOTIFICATIONS_HOSTNAME=arr-stack
-      - WATCHTOWER_NOTIFICATIONS=shoutrrr
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
-    restart: unless-stopped
+      - ./webapp:/app
+    ports:
+      - 8080:8080
     networks:
       - boatflix
-
-  autoheal:
-    image: willfarrell/autoheal:1.2.0
-    container_name: autoheal
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - AUTOHEAL_CONTAINER_LABEL=all
-      - AUTOHEAL_INTERVAL=5
-      - AUTOHEAL_START_PERIOD=30
-      - AUTOHEAL_DEFAULT_STOP_TIMEOUT=10
-    restart: always
-
   index:
+    profiles:
+      - running
     image: httpd:latest
     container_name: index
     volumes:
@@ -54,6 +32,8 @@ services:
         max-file: "2"
 
   jellyseerr:
+    profiles:
+      - running
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
     env_file:
@@ -74,6 +54,8 @@ services:
         max-file: "2"
 
   jellyfin:
+    profiles:
+      - running
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
     env_file:
@@ -98,6 +80,8 @@ services:
         max-file: "2"
 
   prowlarr:
+    profiles:
+      - running
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
     volumes:
@@ -128,6 +112,8 @@ services:
         max-file: "2"
 
   flaresolverr:
+    profiles:
+      - running
     image: flaresolverr/flaresolverr:latest
     container_name: flaresolverr
     env_file:
@@ -153,6 +139,8 @@ services:
         max-file: "2"
 
   qbittorrent:
+    profiles:
+      - running
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
     network_mode: "service:vpn"
@@ -181,6 +169,8 @@ services:
         max-file: "2"
 
   lidarr:
+    profiles:
+      - running
     image: linuxserver/lidarr
     container_name: lidarr
     volumes:
@@ -208,6 +198,8 @@ services:
         max-file: "2"
 
   radarr:
+    profiles:
+      - running
     image: linuxserver/radarr:latest
     container_name: radarr
     logging:
@@ -235,6 +227,8 @@ services:
       - boatflix
 
   readarr:
+    profiles:
+      - running
     image: linuxserver/readarr:develop
     container_name: readarr
     logging:
@@ -261,7 +255,9 @@ services:
     networks:
       - boatflix
 
-  calibri:
+  calibrie:
+    profiles:
+      - running
     image: linuxserver/calibre:latest
     container_name: calibri
     logging:
@@ -290,6 +286,8 @@ services:
       - boatflix
 
   sonarr:
+    profiles:
+      - running
     image: linuxserver/sonarr:latest
     container_name: sonarr
     logging:
@@ -317,6 +315,8 @@ services:
       - boatflix
 
   bazarr:
+    profiles:
+      - running
     image: linuxserver/bazarr:latest
     container_name: bazarr
     logging:
@@ -342,6 +342,8 @@ services:
     networks:
       - boatflix
   vpn:
+    profiles:
+      - running
     image: qmcgaw/gluetun
     container_name: vpn
     cap_add:
@@ -366,6 +368,9 @@ services:
         max-size: "200k"
         max-file: "2"
   raspap:
+    profiles:
+      - setup
+      - running
     container_name: raspap
     image: ghcr.io/raspap/raspap-docker:latest
     privileged: true

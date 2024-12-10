@@ -1,0 +1,5 @@
+streamlit~=1.40.2
+streamlit-themes~=0.1.0
+streamlit-card~=1.0.2
+python-dotenv~=1.0.1
+httpx~=0.28.1
