@@ -7,29 +7,40 @@ services:
     container_name: webapp
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfiles/webapp.Dockerfile
     volumes:
       - ./webapp:/app
     ports:
       - 8080:8080
     networks:
       - boatflix
-  index:
-    profiles:
-      - running
-    image: httpd:latest
-    container_name: index
-    volumes:
-      - ./index.html:/usr/local/apache2/htdocs/index.html
-    networks:
-      - boatflix
-    ports:
-      - 80:80
-    logging:
+    logging: &logging
       driver: "json-file"
       options:
         max-size: "200k"
         max-file: "2"
+
+  spotdl:
+    profiles:
+      - running
+    image: boatflix_spotdl
+    build:
+      context: .
+      dockerfile: dockerfiles/spotdl.Dockerfile
+    container_name: spotdl
+    volumes:
+      - /data/media/Music:/music
+      - /data/configs/spotdl/playlists:/app/playlists
+      - /data/configs/spotdl/config.json:/root/.spotdl/config.json
+    environment:
+      - PORT=5050
+      - HOST=0.0.0.0
+    ports:
+      - 5050:5050
+    networks:
+      - boatflix
+    logging:
+      *logging
 
   jellyseerr:
     profiles:
@@ -48,10 +59,7 @@ services:
     networks:
       - boatflix
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   jellyfin:
     profiles:
@@ -74,10 +82,7 @@ services:
     networks:
       - boatflix
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   prowlarr:
     profiles:
@@ -106,10 +111,7 @@ services:
     networks:
       - boatflix
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   flaresolverr:
     profiles:
@@ -133,10 +135,7 @@ services:
     networks:
       - boatflix
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   qbittorrent:
     profiles:
@@ -163,10 +162,7 @@ services:
       start_interval: 5s
     restart: always
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   lidarr:
     profiles:
@@ -192,21 +188,13 @@ services:
     networks:
       - boatflix
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
   radarr:
     profiles:
       - running
     image: linuxserver/radarr:latest
     container_name: radarr
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
     volumes:
       - /data/configs/radarr:/config
       - /data/media/Movies:/movies
@@ -225,17 +213,14 @@ services:
       - 7878:7878
     networks:
       - boatflix
+    logging:
+      *logging
 
   readarr:
     profiles:
       - running
     image: linuxserver/readarr:develop
     container_name: readarr
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
     volumes:
       - /data/configs/readarr:/config
       - /data/media/Books:/mnt/books
@@ -254,17 +239,14 @@ services:
       - 8787:8787
     networks:
       - boatflix
+    logging:
+      *logging
 
   calibrie:
     profiles:
       - running
     image: linuxserver/calibre:latest
     container_name: calibri
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
     volumes:
       - /data/configs/calibri:/config
       - /data/media/Books:/mnt/books
@@ -284,17 +266,14 @@ services:
     restart: always
     networks:
       - boatflix
+    logging:
+      *logging
 
   sonarr:
     profiles:
       - running
     image: linuxserver/sonarr:latest
     container_name: sonarr
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
     volumes:
       - /data/configs/sonarr:/config
       - /data/media/Shows:/mnt/media/shows
@@ -313,17 +292,14 @@ services:
       - 8989:8989
     networks:
       - boatflix
+    logging:
+      *logging
 
   bazarr:
     profiles:
       - running
     image: linuxserver/bazarr:latest
     container_name: bazarr
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
     volumes:
       - /data/configs/bazarr:/config
       - /data/media:/mnt/media
@@ -341,6 +317,9 @@ services:
       - 6767:6767
     networks:
       - boatflix
+    logging:
+      *logging
+
   vpn:
     profiles:
       - running
@@ -363,10 +342,8 @@ services:
       - boatflix
     restart: unless-stopped
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
+
   raspap:
     profiles:
       - setup
@@ -389,10 +366,7 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     restart: unless-stopped
     logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
+      *logging
 
 networks:
   boatflix:
