@@ -3,7 +3,6 @@ import httpx
 import streamlit as st
 from streamlit_themes import set_preset_theme
 from streamlit_card import card as st_card
-from dotenv import dotenv_values, set_key
 
 st.set_page_config(
     page_title="boatflix",

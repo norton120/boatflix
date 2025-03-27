@@ -1,373 +1,484 @@
-services:
-  webapp:
-    profiles:
-      - setup
-      - running
-    image: boatflix_webapp
-    container_name: webapp
-    build:
-      context: .
-      dockerfile: dockerfiles/webapp.Dockerfile
-    volumes:
-      - ./webapp:/app
-    ports:
-      - 8080:8080
-    networks:
-      - boatflix
-    logging: &logging
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "2"
-
-  spotdl:
-    profiles:
-      - running
-    image: boatflix_spotdl
-    build:
-      context: .
-      dockerfile: dockerfiles/spotdl.Dockerfile
-    container_name: spotdl
-    volumes:
-      - /data/media/Music:/music
-      - /data/configs/spotdl/playlists:/app/playlists
-      - /data/configs/spotdl/config.json:/root/.spotdl/config.json
-    environment:
-      - PORT=5050
-      - HOST=0.0.0.0
-    ports:
-      - 5050:5050
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  jellyseerr:
-    profiles:
-      - running
-    image: fallenbagel/jellyseerr:latest
-    container_name: jellyseerr
-    env_file:
-      - .env
-    environment:
-      - LOG_LEVEL=debug
-    volumes:
-      - /data/configs/jellyseerr/config:/app/config
-    restart: always
-    ports:
-      - 5055:5055
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  jellyfin:
-    profiles:
-      - running
-    image: lscr.io/linuxserver/jellyfin:latest
-    container_name: jellyfin
-    env_file:
-      - .env
-    volumes:
-      - /data/configs/jellyfin/config:/config
-      - /data/media/Shows:/data/Shows
-      - /data/media/Movies:/data/Movies
-      - /data/media/Music:/data/Music
-      - /data/media/Books:/data/Books
-    restart: unless-stopped
-    ports:
-      - 8096:8096
-      - 8920:8920
-      - 1900:1900
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  prowlarr:
-    profiles:
-      - running
-    image: linuxserver/prowlarr:latest
-    container_name: prowlarr
-    volumes:
-      - /data/configs/prowlarr:/config
-      - /data/media:/mnt/media
-      - /data/media/Downloads:/mnt/downloads
-    depends_on:
-      flaresolverr:
-        condition: service_started
-    env_file:
-      - .env
-    ports:
-      - 9696:9696
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  flaresolverr:
-    profiles:
-      - running
-    image: flaresolverr/flaresolverr:latest
-    container_name: flaresolverr
-    env_file:
-      - .env
-    environment:
-      - LOG_LEVEL=${LOG_LEVEL:-info}
-      - LOG_HTML=${LOG_HTML:-false}
-      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  qbittorrent:
-    profiles:
-      - running
-    image: linuxserver/qbittorrent:latest
-    container_name: qbittorrent
-    network_mode: "service:vpn"
-    volumes:
-      - /data/configs/qbittorrent:/config
-      - /data/media/Downloads:/mnt/downloads
-    env_file:
-      - .env
-    environment:
-      - WEBUI_PORT=8081
-    depends_on:
-      vpn:
-        condition: service_started
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    logging:
-      *logging
-
-  lidarr:
-    profiles:
-      - running
-    image: linuxserver/lidarr
-    container_name: lidarr
-    volumes:
-      - /data/configs/lidarr:/config
-      - /data/media:/mnt/media
-      - /data/media/Downloads:/mnt/downloads
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    ports:
-      - 8686:8686
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  radarr:
-    profiles:
-      - running
-    image: linuxserver/radarr:latest
-    container_name: radarr
-    volumes:
-      - /data/configs/radarr:/config
-      - /data/media/Movies:/movies
-      - /data/media/Downloads:/mnt/downloads
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    ports:
-      - 7878:7878
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  readarr:
-    profiles:
-      - running
-    image: linuxserver/readarr:develop
-    container_name: readarr
-    volumes:
-      - /data/configs/readarr:/config
-      - /data/media/Books:/mnt/books
-      - /data/media/Downloads:/mnt/downloads
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    ports:
-      - 8787:8787
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  calibrie:
-    profiles:
-      - running
-    image: linuxserver/calibre:latest
-    container_name: calibri
-    volumes:
-      - /data/configs/calibri:/config
-      - /data/media/Books:/mnt/books
-    env_file:
-      - .env
-    environment:
-      - CUSTOM_PORT=8811
-    ports:
-      - 8811:8811
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  sonarr:
-    profiles:
-      - running
-    image: linuxserver/sonarr:latest
-    container_name: sonarr
-    volumes:
-      - /data/configs/sonarr:/config
-      - /data/media/Shows:/mnt/media/shows
-      - /data/media/Downloads:/mnt/downloads
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    ports:
-      - 8989:8989
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  bazarr:
-    profiles:
-      - running
-    image: linuxserver/bazarr:latest
-    container_name: bazarr
-    volumes:
-      - /data/configs/bazarr:/config
-      - /data/media:/mnt/media
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "curl", "-fsL", "ipconfig.me"]
-      interval: 60s
-      timeout: 5s
-      retries: 3
-      start_period: 30s
-      start_interval: 5s
-    restart: always
-    ports:
-      - 6767:6767
-    networks:
-      - boatflix
-    logging:
-      *logging
-
-  vpn:
-    profiles:
-      - running
-    image: qmcgaw/gluetun
-    container_name: vpn
-    cap_add:
-      - NET_ADMIN
-    volumes:
-      - /data/configs/gluetun:/gluetun
-    environment:
-      - VPN_SERVICE_PROVIDER=private internet access
-      - OPENVPN_USER=${PIA_USER}
-      - OPENVPN_PASSWORD=${PIA_PASS}
-      - SERVER_REGIONS=Netherlands
-    ports:
-      - 8081:8081 # qBittorrent Web UI port
-      - 6881:6881 # qbittorrent
-      - 6881:6881/udp # qbittorrent
-    networks:
-      - boatflix
-    restart: unless-stopped
-    logging:
-      *logging
-
-  raspap:
-    profiles:
-      - setup
-      - running
-    container_name: raspap
-    image: ghcr.io/raspap/raspap-docker:latest
-    privileged: true
-    network_mode: host
-    cgroup: host # uncomment when using an ARM device
-    environment:
-      - RASPAP_SSID=boatflix
-      - RASPAP_SSID_PASS=boatflix
-      - RASPAP_COUNTRY=GB
-      - RASPAP_WEBGUI_USER=${AP_USER}
-      - RASPAP_WEBGUI_PASS=${AP_PASS}
-      - RASPAP_WEBGUI_PORT=99
-    cap_add:
-      - SYS_ADMIN
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:rw
-    restart: unless-stopped
-    logging:
-      *logging
-
 networks:
   boatflix:
     driver: bridge
+services:
+  bazarr:
+    container_name: bazarr
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/bazarr:latest
+    labels:
+      boatflix.bazarr.description: 'Bazarr is used by Sonarr and Radarr to download
+        subtitles.
+
+        '
+    logging: &id001
+      driver: json-file
+      options:
+        max-file: '2'
+        max-size: 200k
+    networks:
+    - boatflix
+    ports:
+    - 6767:6767
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/bazarr:/config
+    - /data/media:/mnt/media
+  calibrie:
+    container_name: calibri
+    environment:
+    - CUSTOM_PORT=8811
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/calibre:latest
+    labels:
+      boatflix.calibrie.description: 'Calibre is a ebook manager that allows you to
+        convert ebooks to different formats.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8811:8811
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/calibri:/config
+    - /data/media/Books:/mnt/books
+  flaresolverr:
+    container_name: flaresolverr
+    environment:
+    - LOG_LEVEL=info
+    - LOG_HTML=false
+    - CAPTCHA_SOLVER=none
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: flaresolverr/flaresolverr:latest
+    labels:
+      boatflix.flaresolverr.description: 'Flaresolverr is a proxy server that allows
+        you to bypass the Cloudflare protection.
+
+        It is used by Prowlarr to search for new movies and shows.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    profiles:
+    - running
+    restart: always
+  jellyfin:
+    container_name: jellyfin
+    image: lscr.io/linuxserver/jellyfin:latest
+    labels:
+      boatflix.jellyfin.description: 'Jellyfin is a media server that allows you to
+        store and stream your media.
+
+        This is our "netfilx" and "spotify" like service.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8096:8096
+    - 8920:8920
+    - 1900:1900
+    profiles:
+    - running
+    restart: unless-stopped
+    volumes:
+    - /data/configs/jellyfin/config:/config
+    - /data/media/Shows:/data/Shows
+    - /data/media/Movies:/data/Movies
+    - /data/media/Music:/data/Music
+    - /data/media/Books:/data/Books
+  jellyseerr:
+    container_name: jellyseerr
+    environment:
+    - LOG_LEVEL=debug
+    image: fallenbagel/jellyseerr:latest
+    labels:
+      boatflix.jellyseerr.description: 'Jellyseerr acts as a request manager for Jellyfin.
+
+        With Jellyseerr, users can request movies and shows, which will then be downloaded
+        and added to your Jellyfin library.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 5055:5055
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/jellyseerr/config:/app/config
+  lidarr:
+    container_name: lidarr
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/lidarr:latest
+    labels:
+      boatflix.lidarr.description: 'Lidarr is a music manager that allows you to manage
+        your music library.
+
+        It is used to download music from the internet via torrents.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8686:8686
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/lidarr:/config
+    - /data/media:/mnt/media
+    - /data/media/Downloads:/mnt/downloads
+  pihole:
+    container_name: pihole
+    environment:
+    - TZ=Europe/London
+    image: pihole/pihole:latest
+    labels:
+      boatflix.pihole.description: 'Pihole is a dns server that allows you to block
+        ads and other unwanted content.
+
+        '
+    logging: *id001
+    ports:
+    - 53:53/tcp
+    - 53:53/udp
+    profiles:
+    - running
+    restart: unless-stopped
+    volumes:
+    - ./pihole/etc-pihole:/etc/pihole
+    - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+  prowlarr:
+    container_name: prowlarr
+    depends_on:
+      flaresolverr:
+        condition: service_started
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/prowlarr:latest
+    labels:
+      boatflix.prowlarr.description: 'Prowlarr manages the indexes used by Radarr,
+        Sonarr etc.
+
+        It is needed to search for new movies and shows, but is not generally used
+        by users.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 9696:9696
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/prowlarr:/config
+    - /data/media:/mnt/media
+    - /data/media/Downloads:/mnt/downloads
+  qbittorrent:
+    container_name: qbittorrent
+    depends_on:
+      vpn:
+        condition: service_started
+    environment:
+    - WEBUI_PORT=8081
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/qbittorrent:latest
+    labels:
+      boatflix.qbittorrent.description: 'Qbittorrent is a torrent client that allows
+        you to download movies and shows.
+
+        '
+    logging: *id001
+    network_mode: service:vpn
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/qbittorrent:/config
+    - /data/media/Downloads:/mnt/downloads
+  radarr:
+    container_name: radarr
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/radarr:latest
+    labels:
+      boatflix.radarr.description: 'Radarr is a movie manager that allows you to manage
+        your movie library.
+
+        It is used to download movies from the internet via torrents.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 7878:7878
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/radarr:/config
+    - /data/media/Movies:/movies
+    - /data/media/Downloads:/mnt/downloads
+  raspap:
+    cap_add:
+    - SYS_ADMIN
+    cgroup: host
+    container_name: raspap
+    environment:
+    - RASPAP_SSID=boatflix
+    - RASPAP_SSID_PASS=boatflix
+    - RASPAP_COUNTRY=GB
+    - RASPAP_WEBGUI_USER=admin
+    - RASPAP_WEBGUI_PASS=admin
+    - RASPAP_WEBGUI_PORT=99
+    image: ghcr.io/raspap/raspap-docker:latest
+    labels:
+      boatflix.raspap.description: 'Raspap creates a special wifi network for the
+        boat just for boatflix.
+
+        '
+    logging: *id001
+    network_mode: host
+    privileged: true
+    profiles:
+    - setup
+    - running
+    restart: unless-stopped
+    volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:rw
+  readarr:
+    container_name: readarr
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/readarr:develop
+    labels:
+      boatflix.readarr.description: 'Readarr is a book manager that allows you to
+        manage your book library.
+
+        It is used to download books from the internet via torrents.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8787:8787
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/readarr:/config
+    - /data/media/Books:/mnt/books
+    - /data/media/Downloads:/mnt/downloads
+  sonarr:
+    container_name: sonarr
+    healthcheck:
+      interval: 60s
+      retries: 3
+      start_interval: 5s
+      start_period: 30s
+      test:
+      - CMD
+      - curl
+      - -fsL
+      - ipconfig.me
+      timeout: 5s
+    image: linuxserver/sonarr:latest
+    labels:
+      boatflix.sonarr.description: 'Sonarr is a tv show manager that allows you to
+        manage your tv show library.
+
+        It is used to download tv shows from the internet via torrents.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8989:8989
+    profiles:
+    - running
+    restart: always
+    volumes:
+    - /data/configs/sonarr:/config
+    - /data/media/Shows:/mnt/media/shows
+    - /data/media/Downloads:/mnt/downloads
+  spotdl:
+    command:
+    - web
+    - --host
+    - 0.0.0.0
+    - --port
+    - '5050'
+    container_name: spotdl
+    environment:
+    - PORT=5050
+    - HOST=0.0.0.0
+    image: spotdl/spotify-downloader:latest
+    labels:
+      boatflix.spotdl.description: 'Spotdl is a tool for downloading spotify playlist
+        music from YouTube.
+
+        It is a simple tool that uses the youtube-dl library to download music from
+        YouTube.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 5050:5050
+    profiles:
+    - running
+    volumes:
+    - /data/media/Music:/music
+    - /data/configs/spotdl/playlists:/app/playlists
+    - /data/configs/spotdl/config.json:/root/.spotdl/config.json
+  vpn:
+    cap_add:
+    - NET_ADMIN
+    container_name: vpn
+    environment:
+    - VPN_SERVICE_PROVIDER=private internet access
+    - OPENVPN_USER=
+    - OPENVPN_PASSWORD=
+    - SERVER_REGIONS=Netherlands
+    image: qmcgaw/gluetun:latest
+    labels:
+      boatflix.vpn.description: 'VPN is used to tunnel the internet from the boat
+        via a private internet access account.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 8081:8081
+    - 6881:6881
+    - 6881:6881/udp
+    profiles:
+    - running
+    restart: unless-stopped
+    volumes:
+    - /data/configs/gluetun:/gluetun
+  webapp:
+    build:
+      args:
+        ENVIRONMENT: development
+      context: .
+      dockerfile: dockerfiles/webapp.Dockerfile
+    container_name: webapp
+    image: boatflix_webapp:latest
+    labels:
+      boatflix.webapp.description: 'Webapp is the main control panel and interface
+        for the entire boatflix stack.
+
+        It is a FastAPI application, serving both the api and server-side rendered
+        html.
+
+        Instead of a database, it relies on the .env file to store stack configuration.
+
+        '
+    logging: *id001
+    networks:
+    - boatflix
+    ports:
+    - 80:8080
+    profiles:
+    - setup
+    - running
+    volumes:
+    - ./webapp:/app/webapp
+    - ./docker-compose.yml:/app/docker-compose.yml

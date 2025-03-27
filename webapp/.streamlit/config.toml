@@ -1,6 +1,0 @@
-[server]
-port = 8080
-runOnSave = true
-
-[client]
-toolbarMode = "minimal"
