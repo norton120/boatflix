@@ -10,11 +10,26 @@ router = APIRouter(prefix="/web")
 # Set up templates directory
 templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
+def get_service_image(service_name: str) -> Optional[str]:
+    """Check if a service has a corresponding image in the assets/services directory."""
+    image_path = Path(__file__).parent / "assets" / "services" / f"{service_name.lower()}.png"
+    if image_path.exists():
+        return f"/assets/services/{service_name.lower()}.png"
+    # Check for SVG as fallback
+    svg_path = Path(__file__).parent / "assets" / "services" / f"{service_name.lower()}.svg"
+    if svg_path.exists():
+        return f"/assets/services/{service_name.lower()}.svg"
+    return None
+
 @router.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     compose = Compose()
-    # Filter out the webapp service
-    services = [s for s in compose.services if s.name != "webapp"]
+    # Filter out the webapp service and add image paths
+    services = []
+    for s in compose.services:
+        if s.name != "webapp":
+            s.image_path = get_service_image(s.name)
+            services.append(s)
     return templates.TemplateResponse(
         "home.html",
         {"request": request, "title": "Home", "services": services}

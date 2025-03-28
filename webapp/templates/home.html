@@ -53,6 +53,14 @@
                 {% for service in services %}
                 <div class="h-full">
                     <div class="bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition duration-300 h-full flex flex-col">
+                        {% if service.image_path %}
+                        <div class="relative h-48">
+                            <img src="{{ service.image_path }}"
+                                 alt="{{ service.name }} cover"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+                        </div>
+                        {% endif %}
                         <div class="p-6 flex flex-col flex-grow">
                             <div class="flex justify-between items-start mb-4">
                                 <a href="/web/service/{{ service.name }}" class="text-2xl font-bold text-white hover:text-netflix-red transition">
@@ -70,6 +78,7 @@
                             </div>
 
                             <!-- Environment Variables -->
+                            {% if service.envars %}
                             <details class="mt-4">
                                 <summary class="text-netflix-gray hover:text-white cursor-pointer flex items-center">
                                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,6 +97,7 @@
                                     {% endfor %}
                                 </div>
                             </details>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
