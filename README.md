@@ -2,6 +2,10 @@
 
 ![screen grab of home page](/webapp/assets/screen_grab.png)
 
+>[!Note]
+> I recently (3/29/2025) began migrating Boatflix to a more plug-and-play implementation per [my long-term goal for Boatflix](#Motivation). Main is broken at the moment - it was just easier to mangle it and let the already hand-setup raspberry pi pull it down so I could get the fsmount bits working quickly. Hang with me gang, this'll get sorted out.
+>
+
 Boatflix is a complete media management stack designed for remote/disconnected life (like on a boat). It consists of:
 - Media aquisition and management stack of [Servarr](https://wiki.servarr.com/) projects and all the required support services
 - Media player stack ([Jellyfin](https://jellyfin.org/) for movies, TV, music and [Calibre](https://calibre-ebook.com/) for books)
