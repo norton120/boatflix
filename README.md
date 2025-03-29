@@ -21,11 +21,9 @@ The longterm goal for Boatflix is to publish a suggested hardware list, matching
 - Boatflix requires a VPN tunnel to reach out to the internet and get content. Boats can be anywhere in the world, and laws/rules about what content you can and cannot download vary wildly, so it is just safest to tunnel everything. That way you don't find yourself arrested off the coast of Iran for downloading cat videos.
 
 > [!WARNING]
-> **Yes** you could potentially use Boatflix to download copywritten content illegally from torrent websites. You should not ever do that if it is illegal where you are or will be. Only download content you absolutely have a legal license to own and/or is available freely (such as content in the public domain).
+> **Yes**, you _could_ potentially use Boatflix to download copywritten content illegally from torrent websites, but we all know you'd never do that because you are a good, upstanding citizen. As a reminder, always be careful not to download content if it is illegal where you are (or plan to be in the future). Keep your physical media copies safe somewhere back on land as proof that you have a legal right to the stuff you put on your Boatflix. Otherwise, stick to content that is available freely (such as content in the public domain, public with open licenses etc).
 
 - Boatflix expects a hardwired connection to the internet to download content. This was a choice to simplify setup and maintenence, assuming most people will have some kind of router onboard, and it is less confusing than setting up a wifi connection AND a wifi access point. If people really want a wireless option instead it would be pretty easy to add to the setup page, file an issue.
-
--
 
 ## WIP elements
 - [ ] A startup script to run the new `host_manager.py` as a daemon looping.
