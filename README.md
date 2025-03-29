@@ -8,11 +8,13 @@ Boatflix is a complete media management stack designed for remote/disconnected l
 - Network managers such as the VPN, Wireless AP, and PiHole ad blocker
 
 ## Why?
-Living on an intentionally remote setup such as a sailboat is often about a measure of independence. Internet is often unavailable or unreasonable (Starlink/PepLink hardware can be prohibitively power hungry for casual movie watching at anchor). There is also something very satisfying about cutting that perpetual online tether and silencing the relentless stream of connection. If you have to reconnect every time you want to watch a movie, risk getting a barage of emails just to play a few songs on Spotify... there has to be a better way! That's what Boatflix aims to provide; an onboard, offline archive of media - music, movies, TV, and books - that you can enjoy while totally disconnected from the rest of the world.
+Living on an intentionally remote setup such as a sailboat is often about a measure of independence. Internet can be unavailable or unreasonable (Starlink/PepLink hardware is prohibitively power hungry for casual movie watching at anchor). 
+
+There is also something very satisfying about cutting that perpetual online tether, silencing the relentless stream of connection and allowing yourself some solitude; if you have to reconnect every time you want to watch a movie, risk getting a barage of emails just to play a few songs on Spotify... it can ruin your moment of freedom. That is why Boatflix exists! An onboard, offline archive of media - music, movies, TV, and books - that you can enjoy while totally disconnected from the rest of the world.
 
 
 ## Motivation
-The longterm goal for Boatflix is to publish a suggested hardware list, matching pre-baked iso, and instruction manual so users can pretty much plug-and-play a complete media stack for their vessel.
+I built the first iteration of Boatflix for all the reasons stated above. My longterm goal for Boatflix is to publish a suggested hardware list, matching pre-baked iso image, and a simple instruction manual so users can plug-and-play a complete media stack for their vessel with just a few steps.
 
 ## Notable decisions thus far
 
