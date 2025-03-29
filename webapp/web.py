@@ -41,6 +41,51 @@ async def home(request: Request):
         }
     )
 
+@router.get("/settings", response_class=HTMLResponse)
+async def settings(request: Request):
+    config = Config()
+    compose = Compose()
+    return templates.TemplateResponse(
+        "settings.html",
+        {
+            "request": request,
+            "title": "Settings",
+            "settings": {
+                "disk": config.get_config("hard_drive")["selected_drive_device"],
+                "vpn_service": compose.get_service("vpn").get_envar("VPN_SERVICE_PROVIDER").value,
+                "vpn_username": compose.get_service("vpn").get_envar("OPENVPN_USER").value,
+                "vpn_password": compose.get_service("vpn").get_envar("OPENVPN_PASSWORD").value,
+                "wifi_ssid": compose.get_service("raspap").get_envar("RASPAP_SSID").value,
+                "wifi_password": compose.get_service("raspap").get_envar("RASPAP_SSID_PASS").value
+            },
+            "status": "running" if config.get_config("status")["startup_complete"] else "setup"
+        }
+    )
+
+@router.post("/settings", response_class=HTMLResponse)
+async def update_settings(request: Request):
+    compose = Compose()
+    config = Config()
+    form_data = await request.form()
+
+    settings_config = config.get_config("settings", {})
+    settings_config.update({
+        "disk": form_data.get("disk", ""),
+        "vpn_service": form_data.get("vpn_service", ""),
+        "vpn_username": form_data.get("vpn_username", ""),
+        "vpn_password": form_data.get("vpn_password", ""),
+        "wifi_ssid": form_data.get("wifi_ssid", ""),
+        "wifi_password": form_data.get("wifi_password", "")
+    })
+
+    config.raw_config["settings"] = settings_config
+    config.render()
+
+    return RedirectResponse(
+        url="/web/settings?message=Settings updated successfully",
+        status_code=303
+    )
+
 @router.get("/service/{service_name}", response_class=HTMLResponse)
 async def service_detail(request: Request, service_name: str, message: Optional[str] = None):
     compose = Compose()

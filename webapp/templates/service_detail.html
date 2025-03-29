@@ -58,7 +58,7 @@
                             {% if service.envars %}
                                 {% for envar in service.envars %}
                                 <div class="bg-white/5 p-4 rounded">
-                                    <form action="/web/service/{{ service.name }}/env/{{ envar.name }}" method="POST" class="flex justify-between items-center">
+                                    <form action="/web/service/{{ service.name }}/env/{{ envar.name }}" method="POST" class="flex justify-between items-center" onsubmit="return confirm('Warning: Boatflix will automatically restart to apply this change. Do you want to proceed?');">
                                         <span class="text-white font-semibold">{{ envar.name }}</span>
                                         <div class="flex items-center space-x-2">
                                             <input type="text"
