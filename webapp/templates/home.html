@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'netflix-red': '#E50914',
+                        'netflix-black': '#141414',
+                        'netflix-gray': '#808080'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-netflix-black text-white">
+    {% include "partials/header.html" %}
+
+    <!-- Hero Section -->
+    <section class="relative h-[40vh]">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10"></div>
+        <div class="absolute inset-0">
+            <img src="/assets/hero.png"
+                 class="w-full h-full object-cover" alt="Hero background">
+        </div>
+        <div class="relative z-20 h-full flex items-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-5xl font-bold mb-4">Your Media Services Hub</h1>
+                <p class="text-xl mb-8">Manage and monitor all your media services in one place</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Info Box -->
+    {% if status == 'setup' %}
+    <section class="py-6">
+        <div class="container mx-auto px-4">
+            <div class="bg-netflix-red/20 border border-netflix-red rounded-lg p-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <svg class="h-6 w-6 text-netflix-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h3 class="text-lg font-medium text-white">Setup Required</h3>
+                        <div class="mt-2 text-netflix-gray">
+                            <p>Boatflix needs to be configured before you can use any services. Please complete the setup process by configuring your storage, VPN, and WiFi settings.</p>
+                        </div>
+                        <div class="mt-4">
+                            <a href="/web/settings" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-netflix-red hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-netflix-red">
+                                Configure Settings
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Services Grid -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {% for service in services %}
+                <div class="h-full">
+                    <div class="bg-white/10 rounded-lg overflow-hidden hover:bg-white/20 transition duration-300 h-full flex flex-col">
+                        {% if service.image_path %}
+                        <div class="relative h-48">
+                            <img src="{{ service.image_path }}"
+                                 alt="{{ service.name }} cover"
+                                 class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+                        </div>
+                        {% endif %}
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-4">
+                                <a href="/web/service/{{ service.name }}" class="text-2xl font-bold text-white hover:text-netflix-red transition">
+                                    {{ service.name }}
+                                </a>
+                                <span class="bg-netflix-red text-white px-3 py-1 rounded-full text-sm">{{ service.image_tag }}</span>
+                            </div>
+                            <p class="text-netflix-gray mt-2">{{ service.description }}</p>
+                            <div class="mt-4 flex space-x-4">
+                                {% if service.link %}
+                                <a href="{{ service.link }}"
+                                   target="_blank"
+                                   class="inline-block {% if status == 'setup' %}bg-netflix-gray cursor-not-allowed{% else %}bg-netflix-red hover:bg-red-700{% endif %} text-white px-4 py-2 rounded transition"
+                                   {% if status == 'setup' %}onclick="return false;"{% endif %}>
+                                    {% if status == 'setup' %}Offline{% else %}Open Service{% endif %}
+                                </a>
+                                {% endif %}
+                            </div>
+
+                            <!-- Environment Variables -->
+                            {% if service.envars %}
+                            <details class="mt-4">
+                                <summary class="text-netflix-gray hover:text-white cursor-pointer flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                    Environment Variables
+                                </summary>
+                                <div class="mt-2 space-y-2">
+                                    {% for envar in service.envars %}
+                                    <div class="bg-white/5 p-3 rounded">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-white font-semibold">{{ envar.name }}</span>
+                                            <span class="text-netflix-gray">{{ envar.value }}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </details>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

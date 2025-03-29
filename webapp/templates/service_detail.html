@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service.name }} - {{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'netflix-red': '#E50914',
+                        'netflix-black': '#141414',
+                        'netflix-gray': '#808080'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-netflix-black text-white">
+    <!-- Toast Notification -->
+    {% if message %}
+    <div id="toast" class="fixed top-4 right-4 bg-netflix-red text-white px-6 py-3 rounded-lg shadow-lg z-50">
+        {{ message }}
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('toast').style.display = 'none';
+        }, 3000);
+    </script>
+    {% endif %}
+
+    {% include "partials/header.html" %}
+
+    <!-- Service Detail Section -->
+    <section class="pt-24 pb-12">
+        <div class="container mx-auto px-4">
+            <div class="bg-white/10 rounded-lg overflow-hidden">
+                <div class="p-8">
+                    <!-- Header -->
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="max-w-2xl">
+                            <h1 class="text-4xl font-bold text-white mb-2">{{ service.name }}</h1>
+                            <p class="text-xl text-netflix-gray">{{ service.description }}</p>
+                        </div>
+                        <div class="flex flex-col items-end">
+                            <span class="bg-netflix-red text-white px-4 py-2 rounded-full text-lg mb-4">{{ service.image_tag }}</span>
+                            <a href="https://hub.docker.com/r/{{ service.image }}" target="_blank" class="text-netflix-gray hover:text-white transition">{{ service.image }}</a>
+                        </div>
+                    </div>
+
+                    <!-- Environment Variables -->
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold text-white">Environment Variables</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {% if service.envars %}
+                                {% for envar in service.envars %}
+                                <div class="bg-white/5 p-4 rounded">
+                                    <form action="/web/service/{{ service.name }}/env/{{ envar.name }}" method="POST" class="flex justify-between items-center" onsubmit="return confirm('Warning: Boatflix will automatically restart to apply this change. Do you want to proceed?');">
+                                        <span class="text-white font-semibold">{{ envar.name }}</span>
+                                        <div class="flex items-center space-x-2">
+                                            <input type="text"
+                                                   name="value"
+                                                   value="{{ envar.value }}"
+                                                   class="bg-white/10 text-white px-3 py-1 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                                   required>
+                                            <button type="submit"
+                                                    class="bg-netflix-red text-white px-3 py-1 rounded hover:bg-red-700 transition">
+                                                Update
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="col-span-2 bg-white/5 p-4 rounded text-center text-netflix-gray">
+                                    No environment variables set for this service
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="mt-8 flex justify-end space-x-4">
+                        <button class="bg-white/10 text-white px-6 py-2 rounded hover:bg-white/20 transition">
+                            View Logs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>

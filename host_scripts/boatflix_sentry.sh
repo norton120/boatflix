@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Export the .env file so changes made by webapp are reflected
+export $(grep -v '^#' /boatflix/.env | xargs)
+
 # URL to check
 URL="http://localhost"
 
