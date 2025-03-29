@@ -18,6 +18,48 @@
             }
         }
 
+        const inputInfo = {
+            disk: {
+                title: "Boatflix Hard Drive",
+                description: "The physical storage device where Boatflix will store all media files. This should be a dedicated drive or partition. Example: /dev/sda1",
+                requirements: "Must be a valid block device path"
+            },
+            vpn_service: {
+                title: "VPN Service Provider",
+                description: "Your VPN service provider (e.g., NordVPN, ExpressVPN). This is used to ensure secure and private access to media services.",
+                requirements: "Must be a supported VPN provider"
+            },
+            vpn_username: {
+                title: "VPN Username",
+                description: "Your VPN service account username. This is used to authenticate with your VPN provider.",
+                requirements: "Must be your valid VPN account username"
+            },
+            vpn_password: {
+                title: "VPN Password",
+                description: "Your VPN service account password. This is used to authenticate with your VPN provider.",
+                requirements: "Must be your valid VPN account password"
+            },
+            wifi_ssid: {
+                title: "Boatflix WiFi SSID",
+                description: "The name of the WiFi network that Boatflix will create. This is what you'll see when connecting to Boatflix's WiFi.",
+                requirements: "Must be between 1-32 characters"
+            },
+            wifi_password: {
+                title: "Boatflix WiFi Password",
+                description: "The password required to connect to the Boatflix WiFi network. Make sure to choose a strong password.",
+                requirements: "Must be at least 8 characters long"
+            }
+        };
+
+        function updateInfoPanel(inputId) {
+            const info = inputInfo[inputId];
+            if (!info) return;
+            
+            document.getElementById('info-title').textContent = info.title;
+            document.getElementById('info-description').textContent = info.description;
+            document.getElementById('info-requirements').textContent = info.requirements;
+        }
+
         function togglePasswordVisibility(inputId, iconId) {
             const input = document.getElementById(inputId);
             const icon = document.getElementById(iconId);
@@ -34,6 +76,14 @@
                 </svg>`;
             }
         }
+
+        // Add focus event listeners to all inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => updateInfoPanel(input.id));
+            });
+        });
     </script>
 </head>
 <body class="bg-netflix-black text-white">
@@ -54,6 +104,150 @@
     <!-- Settings Section -->
     <section class="pt-24 pb-12">
         <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Settings Form -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white/10 rounded-lg overflow-hidden">
+                        <div class="p-8">
+                            <h1 class="text-4xl font-bold text-white mb-8">Boatflix Settings</h1>
+
+                            <form action="/web/settings" method="POST" class="space-y-6" onsubmit="return confirm('Warning: Boatflix will automatically restart to apply these changes. Do you want to proceed?');">
+                                <!-- Storage Settings -->
+                                <div class="space-y-4">
+                                    <h2 class="text-2xl font-bold text-white">Storage Settings</h2>
+                                    <div class="bg-white/5 p-4 rounded">
+                                        <label for="disk" class="block text-white font-semibold mb-2">Boatflix Hard Drive</label>
+                                        <input type="text"
+                                               id="disk"
+                                               name="disk"
+                                               value="{{ settings.disk }}"
+                                               placeholder="e.g., /dev/sda1"
+                                               class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                               required>
+                                    </div>
+                                </div>
+
+                                <!-- VPN Settings -->
+                                <div class="space-y-4">
+                                    <h2 class="text-2xl font-bold text-white">VPN Settings</h2>
+                                    <div class="bg-white/5 p-4 rounded space-y-4">
+                                        <div>
+                                            <label for="vpn_service" class="block text-white font-semibold mb-2">VPN Service</label>
+                                            <input type="text"
+                                                   id="vpn_service"
+                                                   name="vpn_service"
+                                                   value="{{ settings.vpn_service }}"
+                                                   placeholder="e.g., NordVPN, ExpressVPN"
+                                                   class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                                   required>
+                                        </div>
+                                        <div>
+                                            <label for="vpn_username" class="block text-white font-semibold mb-2">VPN Username</label>
+                                            <input type="text"
+                                                   id="vpn_username"
+                                                   name="vpn_username"
+                                                   value="{{ settings.vpn_username }}"
+                                                   class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                                   required>
+                                        </div>
+                                        <div>
+                                            <label for="vpn_password" class="block text-white font-semibold mb-2">VPN Password</label>
+                                            <div class="relative">
+                                                <input type="password"
+                                                       id="vpn_password"
+                                                       name="vpn_password"
+                                                       value="{{ settings.vpn_password }}"
+                                                       class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red pr-10"
+                                                       required>
+                                                <button type="button"
+                                                        onclick="togglePasswordVisibility('vpn_password', 'vpn_password_icon')"
+                                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-netflix-gray hover:text-white">
+                                                    <span id="vpn_password_icon">
+                                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- WiFi Settings -->
+                                <div class="space-y-4">
+                                    <h2 class="text-2xl font-bold text-white">WiFi Settings</h2>
+                                    <div class="bg-white/5 p-4 rounded space-y-4">
+                                        <div>
+                                            <label for="wifi_ssid" class="block text-white font-semibold mb-2">Boatflix WiFi SSID</label>
+                                            <input type="text"
+                                                   id="wifi_ssid"
+                                                   name="wifi_ssid"
+                                                   value="{{ settings.wifi_ssid }}"
+                                                   class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                                   required>
+                                        </div>
+                                        <div>
+                                            <label for="wifi_password" class="block text-white font-semibold mb-2">Boatflix WiFi Password</label>
+                                            <div class="relative">
+                                                <input type="password"
+                                                       id="wifi_password"
+                                                       name="wifi_password"
+                                                       value="{{ settings.wifi_password }}"
+                                                       class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red pr-10"
+                                                       required>
+                                                <button type="button"
+                                                        onclick="togglePasswordVisibility('wifi_password', 'wifi_password_icon')"
+                                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-netflix-gray hover:text-white">
+                                                    <span id="wifi_password_icon">
+                                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="flex justify-end">
+                                    <button type="submit"
+                                            class="bg-netflix-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition">
+                                        Save Settings
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white/10 rounded-lg overflow-hidden sticky top-24">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold text-white mb-6">Setting Information</h2>
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 id="info-title" class="text-xl font-semibold text-white mb-2">Select a setting to view information</h3>
+                                    <p id="info-description" class="text-netflix-gray mb-4">Click on any setting to see detailed information about it.</p>
+                                    <div class="bg-white/5 p-4 rounded">
+                                        <h4 class="text-white font-semibold mb-2">Requirements:</h4>
+                                        <p id="info-requirements" class="text-netflix-gray">No setting selected</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "partials/footer.html" %}
+</body>
+</html>
             <div class="bg-white/10 rounded-lg overflow-hidden">
                 <div class="p-8">
                     <h1 class="text-4xl font-bold text-white mb-8">Boatflix Settings</h1>
