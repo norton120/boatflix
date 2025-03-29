@@ -1,5 +1,7 @@
 # Boatflix
 
+![screen grab of home page]("webapp/assets/screen_grab.png")
+
 Boatflix is a complete media management stack designed for remote/disconnected life (like on a boat). It consists of:
 - Media aquisition and management stack of [Servarr](https://wiki.servarr.com/) projects and all the required support services
 - Media player stack ([Jellyfin](https://jellyfin.org/) for movies, TV, music and [Calibre](https://calibre-ebook.com/) for books)
