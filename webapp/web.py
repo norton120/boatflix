@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from webapp.persist import Compose
+from webapp.persist import Compose, Config
 from typing import Optional
 
 router = APIRouter(prefix="/web")
@@ -24,6 +24,7 @@ def get_service_image(service_name: str) -> Optional[str]:
 @router.get("/", response_class=HTMLResponse)
 async def home(request: Request):
     compose = Compose()
+    config = Config()
     # Filter out the webapp service and add image paths
     services = []
     for s in compose.services:
@@ -32,12 +33,18 @@ async def home(request: Request):
             services.append(s)
     return templates.TemplateResponse(
         "home.html",
-        {"request": request, "title": "Home", "services": services}
+        {
+            "request": request,
+            "title": "Home",
+            "services": services,
+            "status": "running" if config.get_config("status")["startup_complete"] else "setup"
+        }
     )
 
 @router.get("/service/{service_name}", response_class=HTMLResponse)
 async def service_detail(request: Request, service_name: str, message: Optional[str] = None):
     compose = Compose()
+    config = Config()
     try:
         service = compose.get_service(service_name)
         return templates.TemplateResponse(
@@ -46,14 +53,20 @@ async def service_detail(request: Request, service_name: str, message: Optional[
                 "request": request,
                 "title": "Service Detail",
                 "service": service,
-                "message": message
+                "message": message,
+                "status": "running" if config.get_config("status")["startup_complete"] else "setup"
             }
         )
     except ValueError:
         # If service not found, redirect to home
         return templates.TemplateResponse(
             "home.html",
-            {"request": request, "title": "Home", "services": compose.services}
+            {
+                "request": request,
+                "title": "Home",
+                "services": compose.services,
+                "status": "running" if config.get_config("status")["startup_complete"] else "setup"
+            }
         )
 
 @router.post("/service/{service_name}/env/{envar_name}", response_class=HTMLResponse)

@@ -1,0 +1,10 @@
+{
+    "status": {
+        "startup_complete": false,
+        "restarted_at": null
+    },
+    "hard_drive": {
+        "selected_drive_device": null,
+        "drive_options": []
+    }
+}

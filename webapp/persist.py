@@ -1,3 +1,4 @@
+import json
 from typing import Optional
 import httpx
 from pathlib import Path
@@ -77,3 +78,15 @@ class Compose:
             service.update()
             self.raw_compose["services"][service.name] = service.raw_service
         self.path.write_text(yaml.dump(self.raw_compose))
+
+
+class Config:
+    def __init__(self):
+        self.path = Path("/app/webapp/configuration.json")
+        self.raw_config = json.loads(self.path.read_text())
+
+    def get_config(self, name:str)-> dict:
+        return self.raw_config[name]
+
+    def render(self):
+        self.path.write_text(json.dumps(self.raw_config, indent=4))
