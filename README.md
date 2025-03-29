@@ -1,6 +1,6 @@
 # Boatflix
 
-![screen grab of home page]("webapp/assets/screen_grab.png")
+![screen grab of home page](/webapp/assets/screen_grab.png)
 
 Boatflix is a complete media management stack designed for remote/disconnected life (like on a boat). It consists of:
 - Media aquisition and management stack of [Servarr](https://wiki.servarr.com/) projects and all the required support services
@@ -50,3 +50,6 @@ The longterm goal for Boatflix is to publish a suggested hardware list, matching
 - A jukebox on-device client that can be remote controlled either via webapp or hardware interface. This would allow the Boatflix box to be hooked directly into the ship sound system and play music inside or on-deck as desired, going server -> speakers without having to go server -> client -> cast to receiver -> speakers :vomit:.
 - A polished Calbire "library" experience with hardware. Ideally each Kindle owner can plug into a dedicated USB port somewhere and sync a managed personal library with that device automatically.
 - Really, really good docs.
+
+
+<a href="https://buymeacoffee.com/ethanknox" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
