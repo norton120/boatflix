@@ -5,6 +5,17 @@
     },
     "hard_drive": {
         "selected_drive_device": null,
-        "drive_options": []
+        "drive_options": [
+            {
+                "name": "USB Drive",
+                "device": "/dev/sda1",
+                "UUID": "1234567890"
+            },
+            {
+                "name": "Internal Drive",
+                "device": "/dev/nvme0n1p1",
+                "UUID": "1234567890"
+            }
+        ]
     }
 }

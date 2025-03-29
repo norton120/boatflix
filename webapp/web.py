@@ -52,6 +52,10 @@ async def settings(request: Request):
             "title": "Settings",
             "settings": {
                 "disk": config.get_config("hard_drive")["selected_drive_device"],
+                "drive_options": [
+                    {"name": drive["name"], "device": drive["device"]}
+                    for drive in config.get_config("hard_drive")["drive_options"]
+                ],
                 "vpn_service": compose.get_service("vpn").get_envar("VPN_SERVICE_PROVIDER").value,
                 "vpn_username": compose.get_service("vpn").get_envar("OPENVPN_USER").value,
                 "vpn_password": compose.get_service("vpn").get_envar("OPENVPN_PASSWORD").value,

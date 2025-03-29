@@ -98,19 +98,19 @@
             }
         }
 
-        // Add focus and blur event listeners to all inputs
+        // Add focus and blur event listeners to all inputs and selects
         document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('input');
-            inputs.forEach(input => {
-                input.addEventListener('focus', () => updateInfoPanel(input.id));
-                input.addEventListener('blur', (e) => {
+            const formElements = document.querySelectorAll('input, select');
+            formElements.forEach(element => {
+                element.addEventListener('focus', () => updateInfoPanel(element.id));
+                element.addEventListener('blur', (e) => {
                     // Only reset if no other input in the same section is focused
-                    const currentInfo = inputInfo[input.id];
-                    const otherInputs = Array.from(inputs).filter(i => i !== input);
-                    const hasFocusedInput = otherInputs.some(i =>
+                    const currentInfo = inputInfo[element.id];
+                    const otherElements = Array.from(formElements).filter(i => i !== element);
+                    const hasFocusedElement = otherElements.some(i =>
                         document.activeElement === i && inputInfo[i.id].section === currentInfo.section
                     );
-                    if (!hasFocusedInput) {
+                    if (!hasFocusedElement) {
                         resetInfoPanel();
                     }
                 });
@@ -148,14 +148,18 @@
                                 <div class="space-y-4">
                                     <h2 class="text-2xl font-bold text-white">Storage Settings</h2>
                                     <div class="bg-white/5 p-4 rounded">
-                                        <label for="disk" class="block text-white font-semibold mb-2">Boatflix Hard Drive</label>
-                                        <input type="text"
-                                               id="disk"
-                                               name="disk"
-                                               value="{{ settings.disk }}"
-                                               placeholder="e.g., /dev/sda1"
-                                               class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
-                                               required>
+                                        <label for="disk" class="block text-white font-semibold mb-2">Boatflix Hard Drive <span class="text-netflix-red">*</span></label>
+                                        <select id="disk"
+                                                name="disk"
+                                                class="w-full bg-white/10 text-white px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-netflix-red"
+                                                required>
+                                            <option value="">Select a drive</option>
+                                            {% for drive in settings.drive_options %}
+                                            <option value="{{ drive.device }}" {% if drive.device == settings.disk %}selected{% endif %}>
+                                                {{ drive.name }} ({{ drive.device }})
+                                            </option>
+                                            {% endfor %}
+                                        </select>
                                     </div>
                                 </div>
 
@@ -164,7 +168,7 @@
                                     <h2 class="text-2xl font-bold text-white">VPN Settings</h2>
                                     <div class="bg-white/5 p-4 rounded space-y-4">
                                         <div>
-                                            <label for="vpn_service" class="block text-white font-semibold mb-2">VPN Service</label>
+                                            <label for="vpn_service" class="block text-white font-semibold mb-2">VPN Service <span class="text-netflix-red">*</span></label>
                                             <input type="text"
                                                    id="vpn_service"
                                                    name="vpn_service"
@@ -174,7 +178,7 @@
                                                    required>
                                         </div>
                                         <div>
-                                            <label for="vpn_username" class="block text-white font-semibold mb-2">VPN Username</label>
+                                            <label for="vpn_username" class="block text-white font-semibold mb-2">VPN Username <span class="text-netflix-red">*</span></label>
                                             <input type="text"
                                                    id="vpn_username"
                                                    name="vpn_username"
@@ -183,7 +187,7 @@
                                                    required>
                                         </div>
                                         <div>
-                                            <label for="vpn_password" class="block text-white font-semibold mb-2">VPN Password</label>
+                                            <label for="vpn_password" class="block text-white font-semibold mb-2">VPN Password <span class="text-netflix-red">*</span></label>
                                             <div class="relative">
                                                 <input type="password"
                                                        id="vpn_password"
@@ -211,7 +215,7 @@
                                     <h2 class="text-2xl font-bold text-white">WiFi Settings</h2>
                                     <div class="bg-white/5 p-4 rounded space-y-4">
                                         <div>
-                                            <label for="wifi_ssid" class="block text-white font-semibold mb-2">Boatflix WiFi SSID</label>
+                                            <label for="wifi_ssid" class="block text-white font-semibold mb-2">Boatflix WiFi SSID <span class="text-netflix-red">*</span></label>
                                             <input type="text"
                                                    id="wifi_ssid"
                                                    name="wifi_ssid"
@@ -220,7 +224,7 @@
                                                    required>
                                         </div>
                                         <div>
-                                            <label for="wifi_password" class="block text-white font-semibold mb-2">Boatflix WiFi Password</label>
+                                            <label for="wifi_password" class="block text-white font-semibold mb-2">Boatflix WiFi Password <span class="text-netflix-red">*</span></label>
                                             <div class="relative">
                                                 <input type="password"
                                                        id="wifi_password"
@@ -241,6 +245,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <!-- Required Fields Note -->
+                                <div class="text-sm text-netflix-gray">
+                                    <span class="text-netflix-red">*</span> Required field
                                 </div>
 
                                 <!-- Submit Button -->
