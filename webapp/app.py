@@ -6,6 +6,7 @@ from webapp.web import router as web_router
 app = FastAPI()
 
 # Mount static files directory
+app.mount("/assets", StaticFiles(directory="webapp/assets"), name="assets")
 app.mount("/assets/services", StaticFiles(directory="webapp/assets/services"), name="services")
 
 #app.include_router(api_router)
