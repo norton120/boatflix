@@ -2,6 +2,7 @@ networks:
   boatflix:
     driver: bridge
 services:
+
   bazarr:
     container_name: bazarr
     healthcheck:
@@ -17,10 +18,8 @@ services:
       timeout: 5s
     image: linuxserver/bazarr:latest
     labels:
-      boatflix.bazarr.description: 'Bazarr is used by Sonarr and Radarr to download
-        subtitles.
-
-        '
+      boatflix.bazarr.description: |
+        Bazarr is used by Sonarr and Radarr to download subtitles.
     logging: &id001
       driver: json-file
       options:
@@ -36,6 +35,19 @@ services:
     volumes:
     - /data/configs/bazarr:/config
     - /data/media:/mnt/media
+  host:
+    profiles:
+      - test
+    image: boatflix_host:latest
+    build:
+      context: .
+      dockerfile: dockerfiles/host.Dockerfile
+    volumes:
+      - ./host:/boatflix
+    command: "pytest --it /boatflix/tests"
+    labels:
+      boatflix.host.description: 'Emulates the raspberry pi host machine. For testing only.'
+    logging: *id001
   calibrie:
     container_name: calibri
     environment:

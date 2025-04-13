@@ -20,3 +20,6 @@ def test_envars():
     compose = Compose()
     vpn = compose.get_service("vpn")
     assert vpn.get_envar("VPN_SERVICE_PROVIDER").value == "private internet access"
+
+
+

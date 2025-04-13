@@ -1,4 +1,9 @@
 {
+    "wifi": {
+        "ssid": null,
+        "password": null,
+        "connected": false
+    },
     "status": {
         "startup_complete": false,
         "restarted_at": null
