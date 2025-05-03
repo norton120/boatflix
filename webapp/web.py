@@ -2,8 +2,12 @@ from fastapi import APIRouter, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
+
 from webapp.persist import Compose, Config
+from webapp.arr_apis import RadarrApi, ProwlarrApi, SonarrApi, LidarrApi, ReadarrApi
 from typing import Optional
+from webapp.logger import logger
+logger = logger.getChild(__name__)
 
 router = APIRouter(prefix="/web")
 
@@ -72,23 +76,40 @@ async def update_settings(request: Request):
     config = Config()
     form_data = await request.form()
 
-    settings_config = config.get_config("settings", {})
-    settings_config.update({
-        "disk": form_data.get("disk", ""),
-        "vpn_service": form_data.get("vpn_service", ""),
-        "vpn_username": form_data.get("vpn_username", ""),
-        "vpn_password": form_data.get("vpn_password", ""),
-        "wifi_ssid": form_data.get("wifi_ssid", ""),
-        "wifi_password": form_data.get("wifi_password", "")
-    })
+    compose.get_service("vpn").get_envar("VPN_SERVICE_PROVIDER").value = form_data.get("vpn_service", "")
+    compose.get_service("vpn").get_envar("OPENVPN_USER").value = form_data.get("vpn_username", "")
+    compose.get_service("vpn").get_envar("OPENVPN_PASSWORD").value = form_data.get("vpn_password", "")
+    compose.render()
 
-    config.raw_config["settings"] = settings_config
+    # Update disk config
+    disk_config = config.get_config("hard_drive")
+    disk_config["selected_drive_device"] = form_data.get("disk", "")
+    config.raw_config["hard_drive"] = disk_config
     config.render()
 
     return RedirectResponse(
         url="/web/settings?message=Settings updated successfully",
         status_code=303
     )
+
+@router.post("/configure-apis")
+async def configure_apis(request: Request):
+
+    prowlarr = ProwlarrApi()
+    prowlarr.set_indexer_proxy()
+    prowlarr.set_indexers()
+
+    apis = (RadarrApi(), SonarrApi(), LidarrApi(), ReadarrApi())
+    for api in apis:
+        logger.info(f"Configuring {api.service_name}")
+        api.disable_auth()
+        logger.info(f"{api.service_name} auth disabled")
+        prowlarr.add_application(api)
+    return RedirectResponse(
+        url="/web/settings?message=APIs configured successfully",
+        status_code=303
+    )
+
 
 @router.get("/service/{service_name}", response_class=HTMLResponse)
 async def service_detail(request: Request, service_name: str, message: Optional[str] = None):
@@ -145,3 +166,4 @@ async def update_env_var(
                 "message": f"Error: {str(e)}"
             }
         )
+

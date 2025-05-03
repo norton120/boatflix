@@ -1,0 +1,5934 @@
+[
+    {
+      "indexerUrls": [
+        "https://1337x.to/",
+        "https://1337x.st/",
+        "https://x1337x.ws/",
+        "https://x1337x.eu/",
+        "https://x1337x.se/",
+        "https://x1337x.cc/",
+        "https://1337x.unblockninja.com/",
+        "https://1337x.ninjaproxy1.com/",
+        "https://1337x.proxyninja.org/",
+        "https://1337x.proxyninja.net/",
+        "https://1337x.torrentbay.st/",
+        "https://1337x.torrentsbay.org/"
+      ],
+      "legacyUrls": [
+        "https://1337x.is/",
+        "https://1337x.gd/",
+        "https://1337x.mrunblock.bond/",
+        "https://1337x.abcproxy.org/",
+        "https://1337x.so/",
+        "https://1337x.unblockit.download/"
+      ],
+      "definitionName": "1337x",
+      "description": "1337X is a Public torrent site that offers verified torrent downloads",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              },
+              {
+                "id": 5040,
+                "name": "TV/HD",
+                "subCategories": []
+              },
+              {
+                "id": 5030,
+                "name": "TV/SD",
+                "subCategories": []
+              },
+              {
+                "id": 5080,
+                "name": "TV/Documentary",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100028,
+            "name": "Anime/Anime",
+            "subCategories": []
+          },
+          {
+            "id": 100078,
+            "name": "Anime/Dual Audio",
+            "subCategories": []
+          },
+          {
+            "id": 100079,
+            "name": "Anime/Dubbed",
+            "subCategories": []
+          },
+          {
+            "id": 100080,
+            "name": "Anime/Subbed",
+            "subCategories": []
+          },
+          {
+            "id": 100081,
+            "name": "Anime/Raw",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3010,
+                "name": "Audio/MP3",
+                "subCategories": []
+              },
+              {
+                "id": 3040,
+                "name": "Audio/Lossless",
+                "subCategories": []
+              },
+              {
+                "id": 3020,
+                "name": "Audio/Video",
+                "subCategories": []
+              },
+              {
+                "id": 3050,
+                "name": "Audio/Other",
+                "subCategories": []
+              },
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100022,
+            "name": "Music/MP3",
+            "subCategories": []
+          },
+          {
+            "id": 100023,
+            "name": "Music/Lossless",
+            "subCategories": []
+          },
+          {
+            "id": 100024,
+            "name": "Music/DVD",
+            "subCategories": []
+          },
+          {
+            "id": 100025,
+            "name": "Music/Video",
+            "subCategories": []
+          },
+          {
+            "id": 100026,
+            "name": "Music/Radio",
+            "subCategories": []
+          },
+          {
+            "id": 100027,
+            "name": "Music/Other",
+            "subCategories": []
+          },
+          {
+            "id": 100053,
+            "name": "Music/Album",
+            "subCategories": []
+          },
+          {
+            "id": 100058,
+            "name": "Music/Box set",
+            "subCategories": []
+          },
+          {
+            "id": 100059,
+            "name": "Music/Discography",
+            "subCategories": []
+          },
+          {
+            "id": 100060,
+            "name": "Music/Single",
+            "subCategories": []
+          },
+          {
+            "id": 100068,
+            "name": "Music/Concerts",
+            "subCategories": []
+          },
+          {
+            "id": 100069,
+            "name": "Music/AAC",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": [
+              {
+                "id": 2070,
+                "name": "Movies/DVD",
+                "subCategories": []
+              },
+              {
+                "id": 2030,
+                "name": "Movies/SD",
+                "subCategories": []
+              },
+              {
+                "id": 2010,
+                "name": "Movies/Foreign",
+                "subCategories": []
+              },
+              {
+                "id": 2040,
+                "name": "Movies/HD",
+                "subCategories": []
+              },
+              {
+                "id": 2060,
+                "name": "Movies/3D",
+                "subCategories": []
+              },
+              {
+                "id": 2045,
+                "name": "Movies/UHD",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100001,
+            "name": "Movies/DVD",
+            "subCategories": []
+          },
+          {
+            "id": 100002,
+            "name": "Movies/Divx/Xvid",
+            "subCategories": []
+          },
+          {
+            "id": 100003,
+            "name": "Movies/SVCD/VCD",
+            "subCategories": []
+          },
+          {
+            "id": 100004,
+            "name": "Movies/Dubs/Dual Audio",
+            "subCategories": []
+          },
+          {
+            "id": 100042,
+            "name": "Movies/HD",
+            "subCategories": []
+          },
+          {
+            "id": 100054,
+            "name": "Movies/h.264/x264",
+            "subCategories": []
+          },
+          {
+            "id": 100055,
+            "name": "Movies/Mp4",
+            "subCategories": []
+          },
+          {
+            "id": 100066,
+            "name": "Movies/3D",
+            "subCategories": []
+          },
+          {
+            "id": 100070,
+            "name": "Movies/HEVC/x265",
+            "subCategories": []
+          },
+          {
+            "id": 100073,
+            "name": "Movies/Bollywood",
+            "subCategories": []
+          },
+          {
+            "id": 100076,
+            "name": "Movies/UHD",
+            "subCategories": []
+          },
+          {
+            "id": 100005,
+            "name": "TV/DVD",
+            "subCategories": []
+          },
+          {
+            "id": 100006,
+            "name": "TV/Divx/Xvid",
+            "subCategories": []
+          },
+          {
+            "id": 100007,
+            "name": "TV/SVCD/VCD",
+            "subCategories": []
+          },
+          {
+            "id": 100041,
+            "name": "TV/HD",
+            "subCategories": []
+          },
+          {
+            "id": 100071,
+            "name": "TV/HEVC/x265",
+            "subCategories": []
+          },
+          {
+            "id": 100074,
+            "name": "TV/Cartoons",
+            "subCategories": []
+          },
+          {
+            "id": 100075,
+            "name": "TV/SD",
+            "subCategories": []
+          },
+          {
+            "id": 100009,
+            "name": "TV/Documentary",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4030,
+                "name": "PC/Mac",
+                "subCategories": []
+              },
+              {
+                "id": 4070,
+                "name": "PC/Mobile-Android",
+                "subCategories": []
+              },
+              {
+                "id": 4060,
+                "name": "PC/Mobile-iOS",
+                "subCategories": []
+              },
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              },
+              {
+                "id": 4040,
+                "name": "PC/Mobile-Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100018,
+            "name": "Apps/PC Software",
+            "subCategories": []
+          },
+          {
+            "id": 100019,
+            "name": "Apps/Mac",
+            "subCategories": []
+          },
+          {
+            "id": 100020,
+            "name": "Apps/Linux",
+            "subCategories": []
+          },
+          {
+            "id": 100021,
+            "name": "Apps/Other",
+            "subCategories": []
+          },
+          {
+            "id": 100056,
+            "name": "Apps/Android",
+            "subCategories": []
+          },
+          {
+            "id": 100057,
+            "name": "Apps/iOS",
+            "subCategories": []
+          },
+          {
+            "id": 100010,
+            "name": "Games/PC Game",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": [
+              {
+                "id": 1080,
+                "name": "Console/PS3",
+                "subCategories": []
+              },
+              {
+                "id": 1020,
+                "name": "Console/PSP",
+                "subCategories": []
+              },
+              {
+                "id": 1040,
+                "name": "Console/XBox",
+                "subCategories": []
+              },
+              {
+                "id": 1050,
+                "name": "Console/XBox 360",
+                "subCategories": []
+              },
+              {
+                "id": 1090,
+                "name": "Console/Other",
+                "subCategories": []
+              },
+              {
+                "id": 1030,
+                "name": "Console/Wii",
+                "subCategories": []
+              },
+              {
+                "id": 1010,
+                "name": "Console/NDS",
+                "subCategories": []
+              },
+              {
+                "id": 1110,
+                "name": "Console/3DS",
+                "subCategories": []
+              },
+              {
+                "id": 1180,
+                "name": "Console/PS4",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100011,
+            "name": "Games/PS2",
+            "subCategories": []
+          },
+          {
+            "id": 100012,
+            "name": "Games/PSP",
+            "subCategories": []
+          },
+          {
+            "id": 100013,
+            "name": "Games/Xbox",
+            "subCategories": []
+          },
+          {
+            "id": 100014,
+            "name": "Games/Xbox360",
+            "subCategories": []
+          },
+          {
+            "id": 100015,
+            "name": "Games/PS1",
+            "subCategories": []
+          },
+          {
+            "id": 100016,
+            "name": "Games/Dreamcast",
+            "subCategories": []
+          },
+          {
+            "id": 100017,
+            "name": "Games/Other",
+            "subCategories": []
+          },
+          {
+            "id": 100043,
+            "name": "Games/PS3",
+            "subCategories": []
+          },
+          {
+            "id": 100044,
+            "name": "Games/Wii",
+            "subCategories": []
+          },
+          {
+            "id": 100045,
+            "name": "Games/DS",
+            "subCategories": []
+          },
+          {
+            "id": 100046,
+            "name": "Games/GameCube",
+            "subCategories": []
+          },
+          {
+            "id": 100072,
+            "name": "Games/3DS",
+            "subCategories": []
+          },
+          {
+            "id": 100077,
+            "name": "Games/PS4",
+            "subCategories": []
+          },
+          {
+            "id": 100082,
+            "name": "Games/Switch",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": [
+              {
+                "id": 6010,
+                "name": "XXX/DVD",
+                "subCategories": []
+              },
+              {
+                "id": 6060,
+                "name": "XXX/ImageSet",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100048,
+            "name": "XXX/Video",
+            "subCategories": []
+          },
+          {
+            "id": 100049,
+            "name": "XXX/Picture",
+            "subCategories": []
+          },
+          {
+            "id": 100050,
+            "name": "XXX/Magazine",
+            "subCategories": []
+          },
+          {
+            "id": 100051,
+            "name": "XXX/Hentai",
+            "subCategories": []
+          },
+          {
+            "id": 100067,
+            "name": "XXX/Games",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100033,
+            "name": "Other/Emulation",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              },
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100034,
+            "name": "Other/Tutorial",
+            "subCategories": []
+          },
+          {
+            "id": 100035,
+            "name": "Other/Sounds",
+            "subCategories": []
+          },
+          {
+            "id": 100036,
+            "name": "Other/E-books",
+            "subCategories": []
+          },
+          {
+            "id": 100037,
+            "name": "Other/Images",
+            "subCategories": []
+          },
+          {
+            "id": 100038,
+            "name": "Other/Mobile Phone",
+            "subCategories": []
+          },
+          {
+            "id": 100039,
+            "name": "Other/Comics",
+            "subCategories": []
+          },
+          {
+            "id": 100040,
+            "name": "Other/Other",
+            "subCategories": []
+          },
+          {
+            "id": 100047,
+            "name": "Other/Nulled Script",
+            "subCategories": []
+          },
+          {
+            "id": 100052,
+            "name": "Other/Audiobook",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": true,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q",
+          "album",
+          "artist"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:18:42Z",
+      "sortName": "1337x",
+      "name": "1337x",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "1337x",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "info_flaresolverr",
+          "label": "FlareSolverr Info",
+          "helpLink": "https://wiki.servarr.com/prowlarr/faq#can-i-use-flaresolverr-indexers",
+          "value": "This site may use Cloudflare DDoS Protection, therefore Prowlarr requires <a href=\"https://wiki.servarr.com/prowlarr/faq#can-i-use-flaresolverr-indexers\" target=\"_blank\" rel=\"noreferrer\">FlareSolverr</a> to access it.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "downloadlink",
+          "label": "Download link",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "downloadlink2",
+          "label": "Download link (fallback)",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "info_download",
+          "label": "About the Download links",
+          "value": "As the iTorrents .torrent download link on this site is known to fail from time to time, we suggest using the magnet link as a fallback. The BTCache and Torrage services are not supported because they require additional user interaction (a captcha for BTCache and a download button on Torrage.)",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "sort",
+          "label": "Sort requested from site",
+          "value": 2,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "seeders",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "size",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "created",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "type",
+          "label": "Order requested from site",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "asc",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "desc",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#1337x",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "indexerUrls": [
+        "https://badasstorrents.com/"
+      ],
+      "legacyUrls": [
+        "https://badasstorrents.mrunblock.bond/",
+        "https://badasstorrents.nocensor.cloud/"
+      ],
+      "definitionName": "badasstorrents",
+      "description": "Badass Torrents is a Public torrent site for MOVIES / TV / GENERAL",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q",
+          "album",
+          "artist"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:20:00Z",
+      "sortName": "badass torrents",
+      "name": "Badass Torrents",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "badasstorrents",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "downloadlink",
+          "label": "Download link",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": ".torrent",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "downloadlink2",
+          "label": "Download link (fallback)",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": ".torrent",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "info_download",
+          "label": "About the Download links",
+          "value": "You can optionally set as a fallback an automatic alternate link, so if the .torrent download link fails your download will still be successful.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#badasstorrents",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://bangumi.moe/"
+      ],
+      "legacyUrls": [],
+      "definitionName": "bangumi-moe",
+      "description": "Bangumi Moe is a Public torrent site for ANIME",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 121599,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 152717,
+            "name": "Anime Pack",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 129757,
+            "name": "Anime Movie",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 143311,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 158045,
+            "name": "Comic",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": []
+          },
+          {
+            "id": 157853,
+            "name": "Game",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 123135,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 122298,
+            "name": "Dorama",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:20:07Z",
+      "sortName": "bangumi moe",
+      "name": "Bangumi Moe",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "bangumi-moe",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#bangumi-moe",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://bitsearch.to/",
+        "https://solidtorrents.to/"
+      ],
+      "legacyUrls": [
+        "https://bitsearch.nocensor.cloud/",
+        "https://bitsearch.mrunblock.bond/",
+        "https://solidtorrents.net/",
+        "https://solidtorrents.nocensor.cloud/",
+        "https://solidtorrents.eu/"
+      ],
+      "definitionName": "bitsearch",
+      "description": "BitSearch (Solid Torrents) is a Public torrent meta-search engine",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              },
+              {
+                "id": 3010,
+                "name": "Audio/MP3",
+                "subCategories": []
+              },
+              {
+                "id": 3040,
+                "name": "Audio/Lossless",
+                "subCategories": []
+              },
+              {
+                "id": 3020,
+                "name": "Audio/Video",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              },
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              },
+              {
+                "id": 4070,
+                "name": "PC/Mobile-Android",
+                "subCategories": []
+              },
+              {
+                "id": 4020,
+                "name": "PC/ISO",
+                "subCategories": []
+              },
+              {
+                "id": 4010,
+                "name": "PC/0day",
+                "subCategories": []
+              },
+              {
+                "id": 4030,
+                "name": "PC/Mac",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:20:14Z",
+      "sortName": "bitsearch",
+      "name": "BitSearch",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "bitsearch",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "sort",
+          "label": "Sort requested from site",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "created",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "seeders",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "size",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "type",
+          "label": "Order requested from site",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "asc",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "desc",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#bitsearch",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://archive.org/"
+      ],
+      "legacyUrls": [],
+      "definitionName": "internetarchive",
+      "description": "Internet Archive is a non-profit digital library offering free universal access to books, movies & music, as well as 406 billion archived web pages",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 127296,
+            "name": "audio",
+            "subCategories": []
+          },
+          {
+            "id": 154563,
+            "name": "etree",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 112696,
+            "name": "movies",
+            "subCategories": []
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 112696,
+            "name": "movies",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 130222,
+            "name": "image",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 130440,
+            "name": "texts",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": []
+          },
+          {
+            "id": 133225,
+            "name": "software",
+            "subCategories": []
+          },
+          {
+            "id": 133994,
+            "name": "web",
+            "subCategories": []
+          },
+          {
+            "id": 114112,
+            "name": "collection",
+            "subCategories": []
+          },
+          {
+            "id": 108394,
+            "name": "account",
+            "subCategories": []
+          },
+          {
+            "id": 131905,
+            "name": "data",
+            "subCategories": []
+          },
+          {
+            "id": 138096,
+            "name": "other",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:44:36Z",
+      "sortName": "internet archive",
+      "name": "Internet Archive",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "internetarchive",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "titleOnly",
+          "label": "Search only in title",
+          "value": true,
+          "type": "checkbox",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "noMagnet",
+          "label": "Download using .torrent only. No Magnets.",
+          "value": false,
+          "type": "checkbox",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "sort",
+          "label": "Sort requested from site",
+          "value": 2,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "downloads",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "size",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "created",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "type",
+          "label": "Order requested from site",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "asc",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "desc",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#internetarchive",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://knaben.org/"
+      ],
+      "legacyUrls": [
+        "https://knaben.eu/"
+      ],
+      "definitionName": "Knaben",
+      "description": "Knaben is a Public torrent meta-search engine",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3010,
+                "name": "Audio/MP3",
+                "subCategories": []
+              },
+              {
+                "id": 3040,
+                "name": "Audio/Lossless",
+                "subCategories": []
+              },
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              },
+              {
+                "id": 3020,
+                "name": "Audio/Video",
+                "subCategories": []
+              },
+              {
+                "id": 3050,
+                "name": "Audio/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 1100000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 1101000,
+            "name": "MP3",
+            "subCategories": []
+          },
+          {
+            "id": 1102000,
+            "name": "Lossless",
+            "subCategories": []
+          },
+          {
+            "id": 1103000,
+            "name": "Audiobook",
+            "subCategories": []
+          },
+          {
+            "id": 1104000,
+            "name": "Audio Video",
+            "subCategories": []
+          },
+          {
+            "id": 1105000,
+            "name": "Radio",
+            "subCategories": []
+          },
+          {
+            "id": 1106000,
+            "name": "Audio Other",
+            "subCategories": []
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5040,
+                "name": "TV/HD",
+                "subCategories": []
+              },
+              {
+                "id": 5030,
+                "name": "TV/SD",
+                "subCategories": []
+              },
+              {
+                "id": 5045,
+                "name": "TV/UHD",
+                "subCategories": []
+              },
+              {
+                "id": 5080,
+                "name": "TV/Documentary",
+                "subCategories": []
+              },
+              {
+                "id": 5020,
+                "name": "TV/Foreign",
+                "subCategories": []
+              },
+              {
+                "id": 5060,
+                "name": "TV/Sport",
+                "subCategories": []
+              },
+              {
+                "id": 5050,
+                "name": "TV/Other",
+                "subCategories": []
+              },
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 2100000,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 2101000,
+            "name": "TV HD",
+            "subCategories": []
+          },
+          {
+            "id": 2102000,
+            "name": "TV SD",
+            "subCategories": []
+          },
+          {
+            "id": 2103000,
+            "name": "TV UHD",
+            "subCategories": []
+          },
+          {
+            "id": 2104000,
+            "name": "Documentary",
+            "subCategories": []
+          },
+          {
+            "id": 2105000,
+            "name": "TV Foreign",
+            "subCategories": []
+          },
+          {
+            "id": 2106000,
+            "name": "Sport",
+            "subCategories": []
+          },
+          {
+            "id": 2107000,
+            "name": "Cartoon",
+            "subCategories": []
+          },
+          {
+            "id": 2108000,
+            "name": "TV Other",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": [
+              {
+                "id": 2040,
+                "name": "Movies/HD",
+                "subCategories": []
+              },
+              {
+                "id": 2030,
+                "name": "Movies/SD",
+                "subCategories": []
+              },
+              {
+                "id": 2045,
+                "name": "Movies/UHD",
+                "subCategories": []
+              },
+              {
+                "id": 2070,
+                "name": "Movies/DVD",
+                "subCategories": []
+              },
+              {
+                "id": 2010,
+                "name": "Movies/Foreign",
+                "subCategories": []
+              },
+              {
+                "id": 2060,
+                "name": "Movies/3D",
+                "subCategories": []
+              },
+              {
+                "id": 2020,
+                "name": "Movies/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 3100000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3101000,
+            "name": "Movies HD",
+            "subCategories": []
+          },
+          {
+            "id": 3102000,
+            "name": "Movies SD",
+            "subCategories": []
+          },
+          {
+            "id": 3103000,
+            "name": "Movies UHD",
+            "subCategories": []
+          },
+          {
+            "id": 3104000,
+            "name": "Movies DVD",
+            "subCategories": []
+          },
+          {
+            "id": 3105000,
+            "name": "Movies Foreign",
+            "subCategories": []
+          },
+          {
+            "id": 3106000,
+            "name": "Movies Bollywood",
+            "subCategories": []
+          },
+          {
+            "id": 3107000,
+            "name": "Movies 3D",
+            "subCategories": []
+          },
+          {
+            "id": 3108000,
+            "name": "Movies Other",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              },
+              {
+                "id": 4010,
+                "name": "PC/0day",
+                "subCategories": []
+              },
+              {
+                "id": 4030,
+                "name": "PC/Mac",
+                "subCategories": []
+              },
+              {
+                "id": 4020,
+                "name": "PC/ISO",
+                "subCategories": []
+              },
+              {
+                "id": 4040,
+                "name": "PC/Mobile-Other",
+                "subCategories": []
+              },
+              {
+                "id": 4070,
+                "name": "PC/Mobile-Android",
+                "subCategories": []
+              },
+              {
+                "id": 4060,
+                "name": "PC/Mobile-iOS",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 4100000,
+            "name": "PC",
+            "subCategories": []
+          },
+          {
+            "id": 4101000,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 4102000,
+            "name": "Software",
+            "subCategories": []
+          },
+          {
+            "id": 4103000,
+            "name": "Mac",
+            "subCategories": []
+          },
+          {
+            "id": 4104000,
+            "name": "Unix",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": [
+              {
+                "id": 6040,
+                "name": "XXX/x264",
+                "subCategories": []
+              },
+              {
+                "id": 6060,
+                "name": "XXX/ImageSet",
+                "subCategories": []
+              },
+              {
+                "id": 6070,
+                "name": "XXX/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 5100000,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 5101000,
+            "name": "XXX Video",
+            "subCategories": []
+          },
+          {
+            "id": 5102000,
+            "name": "XXX ImageSet",
+            "subCategories": []
+          },
+          {
+            "id": 5103000,
+            "name": "XXX Games",
+            "subCategories": []
+          },
+          {
+            "id": 5104000,
+            "name": "XXX Hentai",
+            "subCategories": []
+          },
+          {
+            "id": 5105000,
+            "name": "XXX Other",
+            "subCategories": []
+          },
+          {
+            "id": 6100000,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 6101000,
+            "name": "Anime Subbed",
+            "subCategories": []
+          },
+          {
+            "id": 6102000,
+            "name": "Anime Dubbed",
+            "subCategories": []
+          },
+          {
+            "id": 6103000,
+            "name": "Anime Dual audio",
+            "subCategories": []
+          },
+          {
+            "id": 6104000,
+            "name": "Anime Raw",
+            "subCategories": []
+          },
+          {
+            "id": 6105000,
+            "name": "Music Video",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7050,
+                "name": "Books/Other",
+                "subCategories": []
+              },
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              },
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              },
+              {
+                "id": 7010,
+                "name": "Books/Mags",
+                "subCategories": []
+              },
+              {
+                "id": 7040,
+                "name": "Books/Technical",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 6106000,
+            "name": "Literature",
+            "subCategories": []
+          },
+          {
+            "id": 6107000,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 6108000,
+            "name": "Anime non-english translated",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": [
+              {
+                "id": 1180,
+                "name": "Console/PS4",
+                "subCategories": []
+              },
+              {
+                "id": 1080,
+                "name": "Console/PS3",
+                "subCategories": []
+              },
+              {
+                "id": 1120,
+                "name": "Console/PS Vita",
+                "subCategories": []
+              },
+              {
+                "id": 1020,
+                "name": "Console/PSP",
+                "subCategories": []
+              },
+              {
+                "id": 1050,
+                "name": "Console/XBox 360",
+                "subCategories": []
+              },
+              {
+                "id": 1040,
+                "name": "Console/XBox",
+                "subCategories": []
+              },
+              {
+                "id": 1010,
+                "name": "Console/NDS",
+                "subCategories": []
+              },
+              {
+                "id": 1030,
+                "name": "Console/Wii",
+                "subCategories": []
+              },
+              {
+                "id": 1130,
+                "name": "Console/WiiU",
+                "subCategories": []
+              },
+              {
+                "id": 1110,
+                "name": "Console/3DS",
+                "subCategories": []
+              },
+              {
+                "id": 1090,
+                "name": "Console/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 7100000,
+            "name": "Console",
+            "subCategories": []
+          },
+          {
+            "id": 7101000,
+            "name": "PS4",
+            "subCategories": []
+          },
+          {
+            "id": 7102000,
+            "name": "PS3",
+            "subCategories": []
+          },
+          {
+            "id": 7103000,
+            "name": "PS2",
+            "subCategories": []
+          },
+          {
+            "id": 7104000,
+            "name": "PS1",
+            "subCategories": []
+          },
+          {
+            "id": 7105000,
+            "name": "PS Vita",
+            "subCategories": []
+          },
+          {
+            "id": 7106000,
+            "name": "PSP",
+            "subCategories": []
+          },
+          {
+            "id": 7107000,
+            "name": "Xbox 360",
+            "subCategories": []
+          },
+          {
+            "id": 7108000,
+            "name": "Xbox",
+            "subCategories": []
+          },
+          {
+            "id": 7109000,
+            "name": "Switch",
+            "subCategories": []
+          },
+          {
+            "id": 7110000,
+            "name": "NDS",
+            "subCategories": []
+          },
+          {
+            "id": 7111000,
+            "name": "Wii",
+            "subCategories": []
+          },
+          {
+            "id": 7112000,
+            "name": "WiiU",
+            "subCategories": []
+          },
+          {
+            "id": 7113000,
+            "name": "3DS",
+            "subCategories": []
+          },
+          {
+            "id": 7114000,
+            "name": "GameCube",
+            "subCategories": []
+          },
+          {
+            "id": 7115000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 8100000,
+            "name": "Mobile",
+            "subCategories": []
+          },
+          {
+            "id": 8101000,
+            "name": "Android",
+            "subCategories": []
+          },
+          {
+            "id": 8102000,
+            "name": "IOS",
+            "subCategories": []
+          },
+          {
+            "id": 8103000,
+            "name": "PC Other",
+            "subCategories": []
+          },
+          {
+            "id": 9100000,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 9101000,
+            "name": "EBooks",
+            "subCategories": []
+          },
+          {
+            "id": 9102000,
+            "name": "Comics",
+            "subCategories": []
+          },
+          {
+            "id": 9103000,
+            "name": "Magazines",
+            "subCategories": []
+          },
+          {
+            "id": 9104000,
+            "name": "Technical",
+            "subCategories": []
+          },
+          {
+            "id": 9105000,
+            "name": "Books Other",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 10100000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 10101000,
+            "name": "Other Misc",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:42:44Z",
+      "sortName": "knaben",
+      "name": "Knaben",
+      "fields": [
+        {
+          "order": 0,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Knaben",
+      "implementation": "Knaben",
+      "configContract": "NoAuthTorrentBaseSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#knaben",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://www.limetorrents.lol/",
+        "https://limetorrents.unblockninja.com/",
+        "https://limetorrents.ninjaproxy1.com/",
+        "https://limetorrents.proxyninja.org/",
+        "https://limetorrents.proxyninja.net/",
+        "https://limetorrents.torrentbay.st/",
+        "https://limetorrents.torrentsbay.org/"
+      ],
+      "legacyUrls": [
+        "https://limetorrents.mrunblock.bond/",
+        "https://limetorrents.nocensor.cloud/",
+        "https://limetorrents.abcproxy.org/",
+        "https://limetorrents.unblockit.download/"
+      ],
+      "definitionName": "limetorrents",
+      "description": "LimeTorrents is a Public general torrent index with mostly verified torrents",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 112972,
+            "name": "TV shows",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100467,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 104627,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": []
+          },
+          {
+            "id": 136409,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4010,
+                "name": "PC/0day",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 151062,
+            "name": "Applications",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 127246,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 146065,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 121527,
+            "name": "E-books",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:42:34Z",
+      "sortName": "limetorrents",
+      "name": "LimeTorrents",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "limetorrents",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "downloadlink",
+          "label": "Download link",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "downloadlink2",
+          "label": "Download link (fallback)",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "info_download",
+          "label": "About the Download links",
+          "value": "As the .torrent download links on this site are known to fail from time to time, you can optionally set as a fallback an automatic alternate link.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "sort",
+          "label": "Sort requested from site",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "created",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "seeders",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "size",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "info_category_8000",
+          "label": "About LimeTorrents Categories",
+          "value": "LimeTorrents only returns category <b>Other</b> in its <i>Keywordless</i> search results page.</br>To pass your apps' indexer TEST you will need to include the 8000(Other) category.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#limetorrents",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://thepiratebay.org/",
+        "https://thepiratebay.unblockninja.com/",
+        "https://thepiratebay.ninjaproxy1.com/",
+        "https://tpb.proxyninja.org/",
+        "https://tpb.proxyninja.net/",
+        "https://thepiratebay.torrentbay.st/",
+        "https://tpb31.ukpass.co/",
+        "https://tpb.skynetcloud.site/",
+        "https://piratehaven.xyz/",
+        "https://mirrorbay.top/",
+        "https://thepiratebay0.org/",
+        "https://thepiratebay10.org/",
+        "https://pirateproxylive.org/",
+        "https://thehiddenbay.com/",
+        "https://thepiratebay.zone/",
+        "https://tpb.party/",
+        "https://piratebayproxy.live/",
+        "https://piratebay.live/",
+        "https://piratebay.party/",
+        "https://thepiratebay.party/",
+        "https://pirate-proxy.africa/",
+        "https://thepiratebaye.org/",
+        "https://5mins.eu/",
+        "https://thepiratebay.cloud/",
+        "https://tpb-proxy.xyz/",
+        "https://piratebay.army/",
+        "https://tpb-visit.me/",
+        "https://tpb.re/",
+        "https://pirate-proxy.ong/"
+      ],
+      "legacyUrls": [
+        "https://pirate-proxy.page/",
+        "https://5mins.shop/",
+        "https://tpb.surf/",
+        "https://tpb.monster/",
+        "https://thepiratebay.host/",
+        "https://piratetoday.xyz/",
+        "https://tpb.wtf/",
+        "https://piratebayo3klnzokct3wt5yyxb2vpebbuyjl7m623iaxmqhsd52coid.onion.ly/",
+        "https://piratebayo3klnzokct3wt5yyxb2vpebbuyjl7m623iaxmqhsd52coid.tor2web.to/",
+        "https://piratebayo3klnzokct3wt5yyxb2vpebbuyjl7m623iaxmqhsd52coid.tor2web.link/",
+        "https://tpb25.ukpass.co/",
+        "https://tpb29.ukpass.co/",
+        "https://piratenow.xyz/",
+        "https://pirate-proxy.ink/",
+        "https://proxifiedpiratebay.org/",
+        "https://unlockedpiratebay.com/",
+        "https://tpb.one/",
+        "https://piratebayorg.net/",
+        "https://tpbproxy.click/",
+        "https://pirateproxy.live/",
+        "https://ukpiratebay.org/",
+        "https://piratebay.by/",
+        "https://pirate-proxy.date/",
+        "https://thepirateproxy.net/",
+        "https://thepiratebay.abcproxy.org/"
+      ],
+      "definitionName": "thepiratebay",
+      "description": "The Pirate Bay (TPB) is the galaxy’s most resilient Public BitTorrent site",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              },
+              {
+                "id": 3040,
+                "name": "Audio/Lossless",
+                "subCategories": []
+              },
+              {
+                "id": 3050,
+                "name": "Audio/Other",
+                "subCategories": []
+              },
+              {
+                "id": 3020,
+                "name": "Audio/Video",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100100,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 100101,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 100102,
+            "name": "Audio Books",
+            "subCategories": []
+          },
+          {
+            "id": 100103,
+            "name": "Sound Clips",
+            "subCategories": []
+          },
+          {
+            "id": 100104,
+            "name": "FLAC",
+            "subCategories": []
+          },
+          {
+            "id": 100199,
+            "name": "Audio Other",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": [
+              {
+                "id": 2020,
+                "name": "Movies/Other",
+                "subCategories": []
+              },
+              {
+                "id": 2040,
+                "name": "Movies/HD",
+                "subCategories": []
+              },
+              {
+                "id": 2060,
+                "name": "Movies/3D",
+                "subCategories": []
+              },
+              {
+                "id": 2030,
+                "name": "Movies/SD",
+                "subCategories": []
+              },
+              {
+                "id": 2045,
+                "name": "Movies/UHD",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100200,
+            "name": "Video",
+            "subCategories": []
+          },
+          {
+            "id": 100201,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100202,
+            "name": "Movies DVDR",
+            "subCategories": []
+          },
+          {
+            "id": 100203,
+            "name": "Music Videos",
+            "subCategories": []
+          },
+          {
+            "id": 100204,
+            "name": "Movie Clips",
+            "subCategories": []
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5050,
+                "name": "TV/Other",
+                "subCategories": []
+              },
+              {
+                "id": 5040,
+                "name": "TV/HD",
+                "subCategories": []
+              },
+              {
+                "id": 5045,
+                "name": "TV/UHD",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100205,
+            "name": "TV Shows",
+            "subCategories": []
+          },
+          {
+            "id": 100206,
+            "name": "Handheld",
+            "subCategories": []
+          },
+          {
+            "id": 100207,
+            "name": "HD - Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100208,
+            "name": "HD - TV shows",
+            "subCategories": []
+          },
+          {
+            "id": 100209,
+            "name": "3D",
+            "subCategories": []
+          },
+          {
+            "id": 100210,
+            "name": "CAM/TS",
+            "subCategories": []
+          },
+          {
+            "id": 100211,
+            "name": "UHD/4k - Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100212,
+            "name": "UHD/4k - TV shows",
+            "subCategories": []
+          },
+          {
+            "id": 100299,
+            "name": "Video Other",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4030,
+                "name": "PC/Mac",
+                "subCategories": []
+              },
+              {
+                "id": 4040,
+                "name": "PC/Mobile-Other",
+                "subCategories": []
+              },
+              {
+                "id": 4060,
+                "name": "PC/Mobile-iOS",
+                "subCategories": []
+              },
+              {
+                "id": 4070,
+                "name": "PC/Mobile-Android",
+                "subCategories": []
+              },
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100300,
+            "name": "Applications",
+            "subCategories": []
+          },
+          {
+            "id": 100301,
+            "name": "Windows",
+            "subCategories": []
+          },
+          {
+            "id": 100302,
+            "name": "Mac",
+            "subCategories": []
+          },
+          {
+            "id": 100303,
+            "name": "UNIX",
+            "subCategories": []
+          },
+          {
+            "id": 100304,
+            "name": "Handheld",
+            "subCategories": []
+          },
+          {
+            "id": 100305,
+            "name": "IOS (iPad/iPhone)",
+            "subCategories": []
+          },
+          {
+            "id": 100306,
+            "name": "Android",
+            "subCategories": []
+          },
+          {
+            "id": 100399,
+            "name": "Other OS",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": [
+              {
+                "id": 1180,
+                "name": "Console/PS4",
+                "subCategories": []
+              },
+              {
+                "id": 1040,
+                "name": "Console/XBox",
+                "subCategories": []
+              },
+              {
+                "id": 1030,
+                "name": "Console/Wii",
+                "subCategories": []
+              },
+              {
+                "id": 1090,
+                "name": "Console/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100400,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 100401,
+            "name": "PC",
+            "subCategories": []
+          },
+          {
+            "id": 100402,
+            "name": "Mac",
+            "subCategories": []
+          },
+          {
+            "id": 100403,
+            "name": "PSx",
+            "subCategories": []
+          },
+          {
+            "id": 100404,
+            "name": "XBOX360",
+            "subCategories": []
+          },
+          {
+            "id": 100405,
+            "name": "Wii",
+            "subCategories": []
+          },
+          {
+            "id": 100406,
+            "name": "Handheld",
+            "subCategories": []
+          },
+          {
+            "id": 100407,
+            "name": "IOS (iPad/iPhone)",
+            "subCategories": []
+          },
+          {
+            "id": 100408,
+            "name": "Android",
+            "subCategories": []
+          },
+          {
+            "id": 100499,
+            "name": "Games Other",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": [
+              {
+                "id": 6010,
+                "name": "XXX/DVD",
+                "subCategories": []
+              },
+              {
+                "id": 6060,
+                "name": "XXX/ImageSet",
+                "subCategories": []
+              },
+              {
+                "id": 6040,
+                "name": "XXX/x264",
+                "subCategories": []
+              },
+              {
+                "id": 6045,
+                "name": "XXX/UHD",
+                "subCategories": []
+              },
+              {
+                "id": 6070,
+                "name": "XXX/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100500,
+            "name": "Porn",
+            "subCategories": []
+          },
+          {
+            "id": 100501,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100502,
+            "name": "Movies DVDR",
+            "subCategories": []
+          },
+          {
+            "id": 100503,
+            "name": "Pictures",
+            "subCategories": []
+          },
+          {
+            "id": 100504,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 100505,
+            "name": "HD - Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100506,
+            "name": "Movie Clips",
+            "subCategories": []
+          },
+          {
+            "id": 100507,
+            "name": "UHD/4k - Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100599,
+            "name": "Porn other",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 100600,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              },
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              },
+              {
+                "id": 7050,
+                "name": "Books/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100601,
+            "name": "E-books",
+            "subCategories": []
+          },
+          {
+            "id": 100602,
+            "name": "Comics",
+            "subCategories": []
+          },
+          {
+            "id": 100603,
+            "name": "Pictures",
+            "subCategories": []
+          },
+          {
+            "id": 100604,
+            "name": "Covers",
+            "subCategories": []
+          },
+          {
+            "id": 100605,
+            "name": "Physibles",
+            "subCategories": []
+          },
+          {
+            "id": 100699,
+            "name": "Other Other",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:41:59Z",
+      "sortName": "pirate bay",
+      "name": "The Pirate Bay",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "thepiratebay",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "info_api",
+          "label": "About this Indexer",
+          "value": "This indexer uses the API at https://apibay.org/ to get its official TPB data. Choose any site link that you can access/prefer so that you can view the torrent details page when browsing the search results for this indexer.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#thepiratebay",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://therarbg.to/",
+        "https://t-rb.org/",
+        "https://the.rarbg.club/",
+        "https://trb.archivebay.online/",
+        "https://trb.t-pb.org/",
+        "https://trb.themirror.wiki/",
+        "https://torrentlite.org/",
+        "https://rarbg.unblockninja.com/",
+        "https://rarbg.ninjaproxy1.com/",
+        "https://rarbg.proxyninja.org/",
+        "https://rarbg.proxyninja.net/",
+        "https://rarbg.torrentbay.st/",
+        "https://rarbg.torrentsbay.org/"
+      ],
+      "legacyUrls": [
+        "https://therarbg.com/"
+      ],
+      "definitionName": "therarbg",
+      "description": "TheRARBG is a Public site inspired by RARBG.to for MOVIES / TV / GENERAL",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100467,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              },
+              {
+                "id": 5080,
+                "name": "TV/Documentary",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 143862,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              },
+              {
+                "id": 4010,
+                "name": "PC/0day",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 136409,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 104627,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 146065,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 148059,
+            "name": "Documentaries",
+            "subCategories": []
+          },
+          {
+            "id": 141945,
+            "name": "Apps",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 127246,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 132586,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 126537,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 112972,
+            "name": "TV shows",
+            "subCategories": []
+          },
+          {
+            "id": 121527,
+            "name": "E-books",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q",
+          "imdbId"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:41:23Z",
+      "sortName": "therarbg",
+      "name": "TheRARBG",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "therarbg",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "sort",
+          "label": "Sort requested from site",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "created desc",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "size desc",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "seeders desc",
+              "order": 0
+            },
+            {
+              "value": 3,
+              "name": "created asc",
+              "order": 0
+            },
+            {
+              "value": 4,
+              "name": "size asc",
+              "order": 0
+            },
+            {
+              "value": 5,
+              "name": "seeders asc",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#therarbg",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://www.torlock.com/"
+      ],
+      "legacyUrls": [
+        "https://torlock.com/",
+        "https://www.torlock.icu/",
+        "https://torlock.nocensor.cloud/",
+        "https://torlock.mrunblock.bond/",
+        "https://torlock.unblockit.download/",
+        "https://www.torlock2.com/"
+      ],
+      "definitionName": "torlock",
+      "description": "Torlock is a torrent search site that lists verified torrents only for TV series and movies",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 108341,
+            "name": "TV Shows",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 149894,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 115039,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 129235,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 142238,
+            "name": "Software",
+            "subCategories": []
+          },
+          {
+            "id": 146976,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 150256,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 131893,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 135300,
+            "name": "Adult",
+            "subCategories": []
+          },
+          {
+            "id": 116950,
+            "name": "Audiobook",
+            "subCategories": []
+          },
+          {
+            "id": 162523,
+            "name": "Images",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:41:18Z",
+      "sortName": "torlock",
+      "name": "Torlock",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "torlock",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "sort",
+          "label": "Sort requested from site (only works for search with keywords)",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "created",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "seeders",
+              "order": 0
+            },
+            {
+              "value": 2,
+              "name": "size",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "type",
+          "label": "Order requested from site",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "asc",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "desc",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#torlock",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://www.torrentdownloads.pro/",
+        "https://torrentdownloads.unblockninja.com/",
+        "https://torrentdownloads.ninjaproxy1.com/",
+        "https://torrentdownloads.proxyninja.org/",
+        "https://torrentdownloads.proxyninja.net/"
+      ],
+      "legacyUrls": [
+        "https://www.torrentdownloads.me/",
+        "https://www.torrentdownloads.info/",
+        "https://torrentdownloads.mrunblock.bond/",
+        "https://torrentdownloads.nocensor.cloud/",
+        "https://torrentdownloads.unblockit.download/"
+      ],
+      "definitionName": "torrentdownloads",
+      "description": "Torrent Downloads (TD) is a Public torrent site for all kinds of content",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100008,
+            "name": "TV Shows",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100004,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 100005,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 100003,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 100007,
+            "name": "Software",
+            "subCategories": []
+          },
+          {
+            "id": 100001,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 100002,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 100009,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 100000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 100006,
+            "name": "Pics",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": true,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:41:12Z",
+      "sortName": "torrent downloads",
+      "name": "Torrent Downloads",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "torrentdownloads",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "downloadlink",
+          "label": "Download link",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "downloadlink2",
+          "label": "Download link (fallback)",
+          "value": 0,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "iTorrents.org",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "magnet",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "info_download",
+          "label": "About the Download links",
+          "value": "As the .torrent download links on this site are known to fail from time to time, you can optionally set as a fallback an automatic alternate link.",
+          "type": "info",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#torrentdownloads",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://www.torrentdownload.info/"
+      ],
+      "legacyUrls": [
+        "https://torrentdownload.mrunblock.bond/",
+        "https://torrentdownload.nocensor.cloud/",
+        "https://torrentdownload.unblockit.download/"
+      ],
+      "definitionName": "torrentdownload",
+      "description": "TorrentDownload is a Public torrent meta-search engine",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 129719,
+            "name": "Adult",
+            "subCategories": []
+          },
+          {
+            "id": 157624,
+            "name": "Adult Porn HD Video",
+            "subCategories": []
+          },
+          {
+            "id": 109047,
+            "name": "Adult Porn Pictures",
+            "subCategories": []
+          },
+          {
+            "id": 134439,
+            "name": "Adult Porn Video",
+            "subCategories": []
+          },
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              },
+              {
+                "id": 5080,
+                "name": "TV/Documentary",
+                "subCategories": []
+              },
+              {
+                "id": 5050,
+                "name": "TV/Other",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 146065,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 164586,
+            "name": "Anime English translated",
+            "subCategories": []
+          },
+          {
+            "id": 125620,
+            "name": "Anime Other",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4010,
+                "name": "PC/0day",
+                "subCategories": []
+              },
+              {
+                "id": 4070,
+                "name": "PC/Mobile-Android",
+                "subCategories": []
+              },
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 151062,
+            "name": "Applications",
+            "subCategories": []
+          },
+          {
+            "id": 165079,
+            "name": "Applications Android",
+            "subCategories": []
+          },
+          {
+            "id": 144435,
+            "name": "Applications Windows",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": [
+              {
+                "id": 3030,
+                "name": "Audio/Audiobook",
+                "subCategories": []
+              },
+              {
+                "id": 3040,
+                "name": "Audio/Lossless",
+                "subCategories": []
+              },
+              {
+                "id": 3010,
+                "name": "Audio/MP3",
+                "subCategories": []
+              },
+              {
+                "id": 3020,
+                "name": "Audio/Video",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 115634,
+            "name": "Books Audiobooks",
+            "subCategories": []
+          },
+          {
+            "id": 160428,
+            "name": "Books Audiobooks",
+            "subCategories": []
+          },
+          {
+            "id": 153068,
+            "name": "Audio Lossless",
+            "subCategories": []
+          },
+          {
+            "id": 116007,
+            "name": "Audio Music",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": [
+              {
+                "id": 7030,
+                "name": "Books/Comics",
+                "subCategories": []
+              },
+              {
+                "id": 7020,
+                "name": "Books/EBook",
+                "subCategories": []
+              },
+              {
+                "id": 7010,
+                "name": "Books/Mags",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 158575,
+            "name": "Books Academic",
+            "subCategories": []
+          },
+          {
+            "id": 145689,
+            "name": "Books Comics",
+            "subCategories": []
+          },
+          {
+            "id": 112812,
+            "name": "Books Ebooks",
+            "subCategories": []
+          },
+          {
+            "id": 147656,
+            "name": "Books Educational",
+            "subCategories": []
+          },
+          {
+            "id": 126347,
+            "name": "Books Magazines",
+            "subCategories": []
+          },
+          {
+            "id": 124764,
+            "name": "Books Fiction",
+            "subCategories": []
+          },
+          {
+            "id": 165359,
+            "name": "Books Nonfiction",
+            "subCategories": []
+          },
+          {
+            "id": 100749,
+            "name": "Books Textbooks",
+            "subCategories": []
+          },
+          {
+            "id": 122878,
+            "name": "Books Ebooks",
+            "subCategories": []
+          },
+          {
+            "id": 1000,
+            "name": "Console",
+            "subCategories": []
+          },
+          {
+            "id": 136409,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 147418,
+            "name": "Games Windows",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 100467,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 135672,
+            "name": "Movies Action",
+            "subCategories": []
+          },
+          {
+            "id": 108211,
+            "name": "Movies Concerts",
+            "subCategories": []
+          },
+          {
+            "id": 104516,
+            "name": "Movies Crime",
+            "subCategories": []
+          },
+          {
+            "id": 133730,
+            "name": "Movies Documentary",
+            "subCategories": []
+          },
+          {
+            "id": 122149,
+            "name": "Movies Dubbed Movies",
+            "subCategories": []
+          },
+          {
+            "id": 157842,
+            "name": "Movies Highres Movies",
+            "subCategories": []
+          },
+          {
+            "id": 101316,
+            "name": "Movies Musicvideos",
+            "subCategories": []
+          },
+          {
+            "id": 107093,
+            "name": "Movies Thriller",
+            "subCategories": []
+          },
+          {
+            "id": 104627,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 116237,
+            "name": "Music Hardrock",
+            "subCategories": []
+          },
+          {
+            "id": 116228,
+            "name": "Music Mp3",
+            "subCategories": []
+          },
+          {
+            "id": 161472,
+            "name": "Music FLAC",
+            "subCategories": []
+          },
+          {
+            "id": 148876,
+            "name": "Music Lossless",
+            "subCategories": []
+          },
+          {
+            "id": 164906,
+            "name": "Music R&B",
+            "subCategories": []
+          },
+          {
+            "id": 102524,
+            "name": "Music Trance House Dance",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": [
+              {
+                "id": 8010,
+                "name": "Other/Misc",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 127246,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 148364,
+            "name": "Other Ebooks",
+            "subCategories": []
+          },
+          {
+            "id": 115776,
+            "name": "Other Comics",
+            "subCategories": []
+          },
+          {
+            "id": 103485,
+            "name": "Other Tutorials",
+            "subCategories": []
+          },
+          {
+            "id": 138214,
+            "name": "Other Unsorted",
+            "subCategories": []
+          },
+          {
+            "id": 129561,
+            "name": "Pictures Other",
+            "subCategories": []
+          },
+          {
+            "id": 134802,
+            "name": "Pictures Wallpapers",
+            "subCategories": []
+          },
+          {
+            "id": 153402,
+            "name": "Software",
+            "subCategories": []
+          },
+          {
+            "id": 143862,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 144345,
+            "name": "TV BBC",
+            "subCategories": []
+          },
+          {
+            "id": 100795,
+            "name": "TV Ellen DeGeneres",
+            "subCategories": []
+          },
+          {
+            "id": 144174,
+            "name": "TV Other",
+            "subCategories": []
+          },
+          {
+            "id": 105852,
+            "name": "TV shows",
+            "subCategories": []
+          },
+          {
+            "id": 131655,
+            "name": "Television",
+            "subCategories": []
+          },
+          {
+            "id": 158611,
+            "name": "Movies Video Mobile",
+            "subCategories": []
+          },
+          {
+            "id": 145382,
+            "name": "Video Movies",
+            "subCategories": []
+          },
+          {
+            "id": 102960,
+            "name": "Video Music",
+            "subCategories": []
+          },
+          {
+            "id": 126537,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 117583,
+            "name": "XXX Video",
+            "subCategories": []
+          },
+          {
+            "id": 108207,
+            "name": "XXX HD Video",
+            "subCategories": []
+          },
+          {
+            "id": 161316,
+            "name": "XXX Pictures",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:39:47Z",
+      "sortName": "torrentdownload",
+      "name": "TorrentDownload",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "torrentdownload",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 0,
+          "name": "sort",
+          "label": "Sort requested from site (Applies only to Search with Keywords)",
+          "value": 1,
+          "type": "select",
+          "advanced": false,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "seeders",
+              "order": 0
+            },
+            {
+              "value": 1,
+              "name": "created",
+              "order": 0
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#torrentdownload",
+      "tags": []
+    },
+    {
+      "indexerUrls": [
+        "https://yourbittorrent.com/",
+        "https://yourbittorrent2.com/"
+      ],
+      "legacyUrls": [
+        "https://yourbittorrent.host/",
+        "https://yourbittorrent.nocensor.cloud/",
+        "https://yourbittorrent.mrunblock.bond/"
+      ],
+      "definitionName": "yourbittorrent",
+      "description": "YourBittorrent is a Public torrent index",
+      "language": "en-US",
+      "encoding": "Unicode (UTF-8)",
+      "enable": true,
+      "redirect": false,
+      "supportsRss": true,
+      "supportsSearch": true,
+      "supportsRedirect": false,
+      "supportsPagination": false,
+      "appProfileId": 1,
+      "protocol": "torrent",
+      "privacy": "public",
+      "capabilities": {
+        "limitsMax": 100,
+        "limitsDefault": 100,
+        "categories": [
+          {
+            "id": 5000,
+            "name": "TV",
+            "subCategories": [
+              {
+                "id": 5070,
+                "name": "TV/Anime",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 141745,
+            "name": "Anime",
+            "subCategories": []
+          },
+          {
+            "id": 4000,
+            "name": "PC",
+            "subCategories": [
+              {
+                "id": 4050,
+                "name": "PC/Games",
+                "subCategories": []
+              }
+            ]
+          },
+          {
+            "id": 133225,
+            "name": "Software",
+            "subCategories": []
+          },
+          {
+            "id": 7000,
+            "name": "Books",
+            "subCategories": []
+          },
+          {
+            "id": 111872,
+            "name": "Ebooks",
+            "subCategories": []
+          },
+          {
+            "id": 6000,
+            "name": "XXX",
+            "subCategories": []
+          },
+          {
+            "id": 144674,
+            "name": "Adult",
+            "subCategories": []
+          },
+          {
+            "id": 110205,
+            "name": "Games",
+            "subCategories": []
+          },
+          {
+            "id": 2000,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 112696,
+            "name": "Movies",
+            "subCategories": []
+          },
+          {
+            "id": 3000,
+            "name": "Audio",
+            "subCategories": []
+          },
+          {
+            "id": 100314,
+            "name": "Music",
+            "subCategories": []
+          },
+          {
+            "id": 102144,
+            "name": "TV",
+            "subCategories": []
+          },
+          {
+            "id": 8000,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 138096,
+            "name": "Other",
+            "subCategories": []
+          },
+          {
+            "id": 122574,
+            "name": "Photos",
+            "subCategories": []
+          },
+          {
+            "id": 115370,
+            "name": "Pictures",
+            "subCategories": []
+          },
+          {
+            "id": 155376,
+            "name": "Unknown",
+            "subCategories": []
+          }
+        ],
+        "supportsRawSearch": false,
+        "searchParams": [
+          "q",
+          "q"
+        ],
+        "tvSearchParams": [
+          "q",
+          "season",
+          "ep"
+        ],
+        "movieSearchParams": [
+          "q"
+        ],
+        "musicSearchParams": [
+          "q"
+        ],
+        "bookSearchParams": [
+          "q"
+        ]
+      },
+      "priority": 25,
+      "downloadClientId": 0,
+      "added": "2025-05-03T02:39:42Z",
+      "sortName": "yourbittorrent",
+      "name": "YourBittorrent",
+      "fields": [
+        {
+          "order": 0,
+          "name": "definitionFile",
+          "value": "yourbittorrent",
+          "type": "textbox",
+          "advanced": false,
+          "hidden": "hidden",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 1,
+          "name": "baseUrl",
+          "label": "Base Url",
+          "helpText": "Select which base url Prowlarr will use for requests to the site",
+          "type": "select",
+          "advanced": false,
+          "selectOptionsProviderAction": "getUrls",
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 2,
+          "name": "baseSettings.queryLimit",
+          "label": "Query Limit",
+          "helpText": "The number of max queries as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 3,
+          "name": "baseSettings.grabLimit",
+          "label": "Grab Limit",
+          "helpText": "The number of max grabs as specified by the respective unit that Prowlarr will allow to the site",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 4,
+          "name": "baseSettings.limitsUnit",
+          "label": "Limits Unit",
+          "helpText": "The unit of time for counting limits per indexer",
+          "value": 0,
+          "type": "select",
+          "advanced": true,
+          "selectOptions": [
+            {
+              "value": 0,
+              "name": "Day",
+              "order": 0,
+              "hint": "(0)"
+            },
+            {
+              "value": 1,
+              "name": "Hour",
+              "order": 1,
+              "hint": "(1)"
+            }
+          ],
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 5,
+          "name": "torrentBaseSettings.appMinimumSeeders",
+          "label": "Apps Minimum Seeders",
+          "helpText": "Minimum seeders required by the Applications for the indexer to grab, empty is Sync profile's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 6,
+          "name": "torrentBaseSettings.seedRatio",
+          "label": "Seed Ratio",
+          "helpText": "The ratio a torrent should reach before stopping, empty uses the download client's default. Ratio should be at least 1.0 and follow the indexers rules",
+          "type": "number",
+          "advanced": false,
+          "privacy": "normal",
+          "isFloat": true
+        },
+        {
+          "order": 7,
+          "name": "torrentBaseSettings.seedTime",
+          "label": "Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a torrent should be seeded before stopping, empty uses the download client's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 8,
+          "name": "torrentBaseSettings.packSeedTime",
+          "label": "Pack Seed Time",
+          "unit": "minutes",
+          "helpText": "The time a pack (season or discography) torrent should be seeded before stopping, empty is app's default",
+          "type": "number",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        },
+        {
+          "order": 9,
+          "name": "torrentBaseSettings.preferMagnetUrl",
+          "label": "Prefer Magnet URL",
+          "helpText": "When enabled, this indexer will prefer the use of magnet URLs for grabs with fallback to torrent links",
+          "value": false,
+          "type": "checkbox",
+          "advanced": true,
+          "privacy": "normal",
+          "isFloat": false
+        }
+      ],
+      "implementationName": "Cardigann",
+      "implementation": "Cardigann",
+      "configContract": "CardigannSettings",
+      "infoLink": "https://wiki.servarr.com/prowlarr/supported-indexers#yourbittorrent",
+      "tags": []
+    }
+  ]

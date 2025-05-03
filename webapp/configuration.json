@@ -9,7 +9,7 @@
         "restarted_at": null
     },
     "hard_drive": {
-        "selected_drive_device": null,
+        "selected_drive_device": "/dev/sda1",
         "drive_options": [
             {
                 "name": "USB Drive",

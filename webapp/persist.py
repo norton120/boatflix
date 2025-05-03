@@ -7,7 +7,17 @@ import yaml
 
 class Envar:
     def __init__(self, valuestring):
-        self.name, self.value = valuestring.split("=")
+        self.valuestring = valuestring
+        self.name, self._value = valuestring.split("=")
+
+    @property
+    def value(self) -> str:
+        return self._value
+
+    @value.setter
+    def value(self, value:str):
+        self._value = value
+        self.valuestring = f"{self.name}={value}"
 
     def __repr__(self) -> str:
         return f"{self.name}={self.value}"
@@ -50,6 +60,7 @@ class Service:
     def update(self) -> dict:
         """updates the service dict to match the state"""
         self.raw_service["image"] = f"{self.image}:{self.image_tag}"
+        self.raw_service["environment"] = [e.valuestring for e in self.envars]
         return self.raw_service
 
     def get_envar(self, name:str)-> Envar:
